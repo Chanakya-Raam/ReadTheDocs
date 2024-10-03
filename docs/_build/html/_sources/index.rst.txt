@@ -1,15 +1,20 @@
-Welcome to FastAPI Documentation!
-==================================
+FastAPI with Keycloak Documentation
+====================================
 
-This documentation provides information on using the FastAPI project along with Keycloak REST APIs for authentication and authorization.
+Welcome to the FastAPI with Keycloak project documentation. This documentation will help you understand the structure, setup, and usage of the FastAPI project integrated with Keycloak for authentication and authorization.
+
+The documentation is divided into several sections:
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
    introduction
-   authentication
+   installation
+   keycloak-authentication
    api-endpoints
+   code-reference
+   faq
 
 Indices and tables
 ==================
