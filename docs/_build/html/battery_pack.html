@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Battery Pack Endpoints &mdash; FastApi Documentation  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="API Documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            FastApi Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Battery Pack Endpoints</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#delete-battery-pack">DELETE <cite>/battery_pack</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-battery-pack">GET <cite>/battery_pack</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#patch-battery-pack">PATCH <cite>/battery_pack</cite></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FastApi Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Battery Pack Endpoints</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/battery_pack.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="battery-pack-endpoints">
+<h1>Battery Pack Endpoints<a class="headerlink" href="#battery-pack-endpoints" title="Link to this heading"></a></h1>
+<p>This section covers all operations available for Battery Packs, including reading, updating, and deleting groups of Battery Packs.</p>
+<section id="delete-battery-pack">
+<h2>DELETE <cite>/battery_pack</cite><a class="headerlink" href="#delete-battery-pack" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Delete a group of battery packs.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> This endpoint allows the deletion of a group of battery packs. Only users with proper authorization (JWT) can perform this action.</p></li>
+<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
+<li><p><strong>Tags:</strong> Battery Pack, Delete Asset</p></li>
+</ul>
+<p><strong>Responses:</strong>
+- <strong>200</strong>: Successful deletion of the battery pack group.
+- <strong>400</strong>: Invalid request.
+- <strong>401</strong>: Unauthorized access (JWT missing or invalid).
+- <strong>403</strong>: Forbidden action.
+- <strong>404</strong>: Battery pack group not found.
+- <strong>408</strong>: Request timeout.
+- <strong>500</strong>: Internal server error.
+- <strong>502</strong>: Bad gateway.</p>
+<p><strong>Example Request:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span><span class="s2">&quot;https://example.com/api/battery_pack&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;JWT&gt;&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="get-battery-pack">
+<h2>GET <cite>/battery_pack</cite><a class="headerlink" href="#get-battery-pack" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Retrieve the properties of a group of battery packs.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> This endpoint fetches the details of a group of battery packs. Users can filter, sort, and paginate the results based on various query parameters.</p></li>
+<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
+<li><p><strong>Tags:</strong> Battery Pack, Read Asset</p></li>
+</ul>
+<p><strong>Query Parameters:</strong>
+- <strong>limit</strong>: (integer) Maximum number of battery packs to return.
+- <strong>offset</strong>: (integer) Number of battery packs to skip for pagination.
+- <strong>search</strong>: (string) Search term to filter battery packs.
+- <strong>sort</strong>: (string) Attribute to sort the results by (e.g., <cite>model_name</cite>, <cite>location</cite>).
+- <strong>order</strong>: (string) Sorting order, either <cite>asc</cite> or <cite>desc</cite>.
+- <strong>status_label</strong>: (string) Filter by status of the battery packs (e.g., <cite>active</cite>, <cite>inactive</cite>).</p>
+<p><strong>Responses:</strong>
+- <strong>200</strong>: Successful retrieval of battery pack details.
+- <strong>400</strong>: Invalid query parameters.
+- <strong>401</strong>: Unauthorized access (JWT missing or invalid).
+- <strong>403</strong>: Forbidden action.
+- <strong>404</strong>: No battery packs found.
+- <strong>408</strong>: Request timeout.
+- <strong>500</strong>: Internal server error.
+- <strong>502</strong>: Bad gateway.</p>
+<p><strong>Example Request:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;https://example.com/api/battery_pack?limit=10&amp;sort=model_name&amp;order=asc&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;JWT&gt;&quot;</span>
+</pre></div>
+</div>
+<p><strong>Example Response:</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;model_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BP-1000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;manufacturer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BatteryCo&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;owner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Company A&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Warehouse 12&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;active&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;model_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BP-2000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;manufacturer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BatteryCo&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;owner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Company B&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Warehouse 15&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;inactive&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="patch-battery-pack">
+<h2>PATCH <cite>/battery_pack</cite><a class="headerlink" href="#patch-battery-pack" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Update the properties of a group of battery packs.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> This endpoint allows the bulk update of battery pack details. The updates are provided via a CSV file, and the endpoint requires proper authorization.</p></li>
+<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
+<li><p><strong>Tags:</strong> Battery Pack, Update Asset</p></li>
+</ul>
+<p><strong>Request Body:</strong>
+- <strong>file</strong>: (binary) A CSV file containing the asset details to update.</p>
+<p><strong>Responses:</strong>
+- <strong>200</strong>: Successful update of battery pack details.
+- <strong>400</strong>: Invalid CSV file or parameters.
+- <strong>401</strong>: Unauthorized access (JWT missing or invalid).
+- <strong>403</strong>: Forbidden action.
+- <strong>404</strong>: No battery packs found for update.
+- <strong>408</strong>: Request timeout.
+- <strong>500</strong>: Internal server error.
+- <strong>502</strong>: Bad gateway.</p>
+<p><strong>Example Request:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>PATCH<span class="w"> </span><span class="s2">&quot;https://example.com/api/battery_pack&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;JWT&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-F<span class="w"> </span><span class="s2">&quot;file=@battery_pack_update.csv&quot;</span>
+</pre></div>
+</div>
+<p><strong>Example CSV Format:</strong></p>
+<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span>id,model_name,manufacturer,status
+1,BP-1000,BatteryCo,active
+2,BP-2000,BatteryCo,inactive
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="API Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Chanakya Terala.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
