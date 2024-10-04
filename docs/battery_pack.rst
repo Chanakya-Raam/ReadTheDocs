@@ -1,7 +1,7 @@
 Battery Pack Endpoints
 ======================
 
-This section covers all operations available for Battery Packs, including creating, reading, updating, deleting, and allocating battery packs.
+This section covers all operations available for Battery Packs, including creating, reading, updating, deleting, and allocating individual or multiple battery packs.
 
 POST `/battery_pack`
 --------------------
@@ -14,89 +14,203 @@ POST `/battery_pack`
 **Request Body:**
 
 - Choose either JSON input or upload a file with asset details.
-- **file**: (binary) The file containing the details of battery packs for bulk upload.
+  
+Example (JSON):
+.. code-block:: json
+
+   {
+     "asset_tag": "IRASUS01",
+     "company": "Irasus Technologies Private Limited",
+     "status_label": "In Warehouse",
+     "model": "Model X",
+     "manufacturer_name": "Irasus Technologies Private Limited",
+     "location": "Delhi",
+     "warranty_months": "3",
+     "battery_pack": {
+       "battery_cell_chemistry": "Li-NMC",
+       "battery_pack_nominal_voltage": "48 V",
+       "battery_pack_nominal_charge_capacity": "48 Ah",
+       "bms_type": "Firmware",
+       "battery_cell_type": "Cylindrical",
+       "battery_pack_casing": "Plastic"
+     }
+   }
 
 **Responses:**
 
-- **201**: Battery pack created successfully or bulk upload processed.
-- **400**: Invalid request.
+- **201**: Battery pack created successfully.
+- **400**: Invalid request parameters.
 - **401**: Unauthorized access.
-- **403**: Forbidden action.
-- **404**: Battery pack not found.
+- **403**: Access forbidden.
+- **404**: Resource not found.
+- **408**: Request timeout.
+- **409**: Resource already exists.
+- **500**: Internal server error.
+
+---
+
+DELETE `/battery_pack`
+----------------------
+
+**Summary:** Delete a group of battery packs.
+
+- **Description:** This endpoint allows the deletion of a group of battery packs. Requires JWT authorization.
+
+**Responses:**
+
+- **200**: Successfully deleted.
+- **400**: Invalid request parameters.
+- **401**: Unauthorized access.
+- **403**: Access forbidden.
+- **404**: Resource not found.
 - **408**: Request timeout.
 - **500**: Internal server error.
-- **502**: Bad gateway.
 
-**Example Request (JSON):**
+**Example Request**:
 
 .. code-block:: bash
 
-   curl -X POST "https://example.com/api/battery_pack" \
-       -H "Authorization: Bearer <JWT>" \
-       -d '{ "model_name": "BP-1000", "manufacturer": "BatteryCo", "status": "active" }'
+   curl -X DELETE "https://example.com/api/battery_pack" \
+       -H "Authorization: Bearer <JWT>"
 
+---
+
+GET `/battery_pack`
+-------------------
+
+**Summary:** Read the properties of a group of battery packs.
+
+- **Description:** Retrieve details of multiple battery packs. Supports filtering, sorting, and pagination.
+
+**Query Parameters:**
+
+- **battery_pack**: Filter based on the battery pack.
+- **limit**: Maximum number of battery packs to return.
+- **offset**: Number of battery packs to skip before starting to collect the result set.
+- **search**: General search term.
+- **sort**: Field to sort by.
+- **order**: Sort order, either `asc` or `desc`.
+- **model_name**: Filter by model name.
+- **manufacturer_name**: Filter by manufacturer name.
+- **owner_name**: Filter by owner name.
+- **location**: Filter by location.
+- **status_label**: Filter by status label.
+
+**Responses:**
+
+- **200**: Successfully retrieved battery packs.
+
+Example response (JSON):
+.. code-block:: json
+
+   [
+     {
+       "asset_tag": "IRASUS01",
+       "company": "Irasus Technologies Private Limited",
+       "status_label": "In Warehouse",
+       "model": "Model X",
+       "manufacturer_name": "Irasus Technologies Private Limited",
+       "location": "Delhi",
+       "warranty_months": "3",
+       "battery_pack": {
+         "battery_cell_chemistry": "Li-NMC",
+         "battery_pack_nominal_voltage": "48 V",
+         "battery_pack_nominal_charge_capacity": "48 Ah",
+         "bms_type": "Firmware",
+         "battery_cell_type": "Cylindrical",
+         "battery_pack_casing": "Plastic"
+       }
+     }
+   ]
+
+---
+
+PATCH `/battery_pack`
+---------------------
+
+**Summary:** Update the properties of a group of battery packs.
+
+- **Description:** This endpoint allows the bulk update of battery pack details. The updates are provided via a CSV file.
+
+**Request Body:**
+
+- **file**: (binary) A CSV file containing the asset details to update.
+
+**Responses:**
+
+- **200**: Assets updated successfully.
+- **400**: Invalid request parameters.
+- **401**: Unauthorized access.
+- **403**: Access forbidden.
+- **404**: Resource not found.
+- **408**: Request timeout.
+- **500**: Internal server error.
+
+---
 
 DELETE `/battery_pack/{i}`
 --------------------------
 
 **Summary:** Delete an individual battery pack.
 
-- **Description:** This endpoint allows deletion of an individual battery pack specified by the `{i}` parameter.
-- **Security:** Requires JWT authentication.
+- **Description:** This endpoint allows deletion of an individual battery pack.
 
-**Parameters:**
+**Path Parameters:**
 
-- **i**: (path) The ID of the battery pack to be deleted.
+- **i**: Identifier of the individual battery pack.
 
 **Responses:**
 
-- **200**: Battery pack deleted successfully.
-- **400**: Invalid request.
-- **401**: Unauthorized access.
-- **403**: Forbidden action.
-- **404**: Battery pack not found.
-- **408**: Request timeout.
-- **500**: Internal server error.
-- **502**: Bad gateway.
+- **200**: Asset deleted successfully.
 
-**Example Request:**
+Example response (JSON):
+.. code-block:: json
 
-.. code-block:: bash
+   {
+     "status": "success",
+     "message": "Asset deleted successfully",
+     "deletedAt": "2024-07-30T12:34:56Z",
+     "asset_tag": "IRASUS01"
+   }
 
-   curl -X DELETE "https://example.com/api/battery_pack/1" \
-       -H "Authorization: Bearer <JWT>" 
-
+---
 
 GET `/battery_pack/{i}`
 -----------------------
 
 **Summary:** Read the properties of an individual battery pack.
 
-- **Description:** Retrieve details of a specific battery pack identified by the `{i}` parameter.
-- **Security:** Requires JWT authentication.
+- **Description:** Retrieve details of a specific battery pack.
 
-**Parameters:**
+**Path Parameters:**
 
-- **i**: (path) The ID of the battery pack to retrieve.
+- **i**: Identifier of the individual battery pack.
 
 **Responses:**
 
 - **200**: Battery pack details returned successfully.
-- **400**: Invalid request.
-- **401**: Unauthorized access.
-- **403**: Forbidden action.
-- **404**: Battery pack not found.
-- **408**: Request timeout.
-- **500**: Internal server error.
-- **502**: Bad gateway.
 
-**Example Request:**
+Example response (JSON):
+.. code-block:: json
 
-.. code-block:: bash
+   {
+     "asset_tag": "IRASUS01",
+     "company": "Irasus Technologies Private Limited",
+     "status_label": "In Warehouse",
+     "model": "Model X",
+     "manufacturer_name": "Irasus Technologies Private Limited",
+     "location": "Delhi",
+     "battery_pack": {
+       "battery_cell_chemistry": "Li-NMC",
+       "battery_pack_nominal_voltage": "48 V",
+       "battery_pack_nominal_charge_capacity": "48 Ah",
+       "bms_type": "Firmware",
+       "battery_cell_type": "Cylindrical",
+       "battery_pack_casing": "Plastic"
+     }
+   }
 
-   curl -X GET "https://example.com/api/battery_pack/1" \
-       -H "Authorization: Bearer <JWT>"
-
+---
 
 PATCH `/battery_pack/{i}`
 -------------------------
@@ -104,104 +218,70 @@ PATCH `/battery_pack/{i}`
 **Summary:** Update the properties of an individual battery pack.
 
 - **Description:** Modify the details of a specific battery pack.
-- **Security:** Requires JWT authentication.
 
-**Parameters:**
+**Path Parameters:**
 
-- **i**: (path) The ID of the battery pack to update.
+- **i**: Identifier of the individual battery pack.
 
 **Request Body:**
 
-- **JSON**: The properties to update for the battery pack.
+- **JSON**: Input containing the asset details.
 
 **Responses:**
 
-- **200**: Battery pack updated successfully.
-- **400**: Invalid request.
-- **401**: Unauthorized access.
-- **403**: Forbidden action.
-- **404**: Battery pack not found.
-- **408**: Request timeout.
-- **500**: Internal server error.
-- **502**: Bad gateway.
+- **200**: Asset updated successfully.
 
-**Example Request (JSON):**
-
-.. code-block:: bash
-
-   curl -X PATCH "https://example.com/api/battery_pack/1" \
-       -H "Authorization: Bearer <JWT>" \
-       -d '{ "model_name": "BP-1000", "status": "inactive" }'
-
+---
 
 POST `/battery_pack/{i}/allocate`
 ---------------------------------
 
-**Summary:** Allocate a battery pack to another asset, user, or location.
+**Summary:** Allocate an individual battery pack to another asset, user, or location.
 
-- **Description:** Allocate an individual battery pack to another asset, user, or location.
-- **Security:** Requires JWT authentication.
+- **Description:** Allocate a battery pack to a different entity such as a vehicle, location, or user.
 
-**Parameters:**
+**Path Parameters:**
 
-- **i**: (path) The ID of the battery pack to allocate.
+- **i**: Identifier of the individual battery pack.
 
 **Request Body:**
 
-- **file**: (binary) The file containing allocation details, or JSON input specifying the allocation.
+- **JSON**: Input for allocation.
 
-**Responses:**
+Example request (JSON):
+.. code-block:: json
 
-- **200**: Allocation processed successfully.
-- **400**: Invalid request.
-- **401**: Unauthorized access.
-- **403**: Forbidden action.
-- **404**: Battery pack not found.
-- **408**: Request timeout.
-- **409**: Conflict in allocation.
-- **500**: Internal server error.
-- **502**: Bad gateway.
+   {
+     "target_category": "Vehicle",
+     "target_individual": "IRASUS01",
+     "status_label": "In Vehicle"
+   }
 
-**Example Request:**
-
-.. code-block:: bash
-
-   curl -X POST "https://example.com/api/battery_pack/1/allocate" \
-       -H "Authorization: Bearer <JWT>" \
-       -d '{ "location": "Warehouse 12" }'
-
+---
 
 POST `/battery_pack/{i}/enable`
 -------------------------------
 
 **Summary:** Enable or disable an individual battery pack.
 
-- **Description:** Toggle the enable/disable status of a battery pack.
-- **Security:** Requires JWT authentication.
+- **Description:** Enable or disable the battery pack.
 
-**Parameters:**
+**Path Parameters:**
 
-- **i**: (path) The ID of the battery pack to enable or disable.
+- **i**: Identifier of the individual battery pack.
 
 **Request Body:**
 
-- **JSON**: Enable/disable data.
+- **JSON**: Input for enable/disable operation.
 
 **Responses:**
 
-- **200**: Battery pack status updated successfully.
-- **400**: Invalid request.
-- **401**: Unauthorized access.
-- **403**: Forbidden action.
-- **404**: Battery pack not found.
-- **408**: Request timeout.
-- **500**: Internal server error.
-- **502**: Bad gateway.
+- **200**: Asset enabled or disabled successfully.
 
-**Example Request:**
+Example response (JSON):
+.. code-block:: json
 
-.. code-block:: bash
-
-   curl -X POST "https://example.com/api/battery_pack/1/enable" \
-       -H "Authorization: Bearer <JWT>" \
-       -d '{ "enabled": true }'
+   {
+     "issuedAt": "2024-09-04 00:00:00+05:30",
+     "enabledAt": "2024-09-04 00:00:00+05:30"
+   }
