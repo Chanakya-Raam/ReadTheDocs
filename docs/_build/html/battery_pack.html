@@ -21,7 +21,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Battery Pack Category" href="battery_pack_category.html" /> 
+    <link rel="prev" title="Assets" href="assets_category.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -45,11 +45,14 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Asset Categories:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="battery_pack_category.html">Battery Pack Category</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="assets_category.html">Assets</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Battery Pack Endpoints</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#delete-battery-pack">DELETE <cite>/battery_pack</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#get-battery-pack">GET <cite>/battery_pack</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#patch-battery-pack">PATCH <cite>/battery_pack</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#post-battery-pack">POST <cite>/battery_pack</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete-battery-pack-i">DELETE <cite>/battery_pack/{i}</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-battery-pack-i">GET <cite>/battery_pack/{i}</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#patch-battery-pack-i">PATCH <cite>/battery_pack/{i}</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#post-battery-pack-i-allocate">POST <cite>/battery_pack/{i}/allocate</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#post-battery-pack-i-enable">POST <cite>/battery_pack/{i}/enable</cite></a></li>
 </ul>
 </li>
 </ul>
@@ -70,7 +73,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="battery_pack_category.html">Battery Pack Category</a></li>
+          <li class="breadcrumb-item"><a href="assets_category.html">Assets</a></li>
       <li class="breadcrumb-item active">Battery Pack Endpoints</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/battery_pack.rst.txt" rel="nofollow"> View page source</a>
@@ -83,120 +86,190 @@
              
   <section id="battery-pack-endpoints">
 <h1>Battery Pack Endpoints<a class="headerlink" href="#battery-pack-endpoints" title="Link to this heading"></a></h1>
-<p>This section covers all operations available for Battery Packs, including reading, updating, and deleting groups of Battery Packs.</p>
-<section id="delete-battery-pack">
-<h2>DELETE <cite>/battery_pack</cite><a class="headerlink" href="#delete-battery-pack" title="Link to this heading"></a></h2>
-<p><strong>Summary:</strong> Delete a group of battery packs.</p>
+<p>This section covers all operations available for Battery Packs, including creating, reading, updating, deleting, and allocating battery packs.</p>
+<section id="post-battery-pack">
+<h2>POST <cite>/battery_pack</cite><a class="headerlink" href="#post-battery-pack" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Create a new battery pack.</p>
 <ul class="simple">
-<li><p><strong>Description:</strong> This endpoint allows the deletion of a group of battery packs. Only users with proper authorization (JWT) can perform this action.</p></li>
+<li><p><strong>Description:</strong> This endpoint allows for the creation of a new battery pack or bulk creation via file upload.</p></li>
 <li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
-<li><p><strong>Tags:</strong> Battery Pack, Delete Asset</p></li>
-</ul>
-<p><strong>Responses:</strong></p>
-<ul class="simple">
-<li><p><strong>200</strong>: Successful deletion of the battery pack group.</p></li>
-<li><p><strong>400</strong>: Invalid request.</p></li>
-<li><p><strong>401</strong>: Unauthorized access (JWT missing or invalid).</p></li>
-<li><p><strong>403</strong>: Forbidden action.</p></li>
-<li><p><strong>404</strong>: Battery pack group not found.</p></li>
-<li><p><strong>408</strong>: Request timeout.</p></li>
-<li><p><strong>500</strong>: Internal server error.</p></li>
-<li><p><strong>502</strong>: Bad gateway.</p></li>
-</ul>
-<p><strong>Example Request:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span><span class="s2">&quot;https://example.com/api/battery_pack&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;JWT&gt;&quot;</span>
-</pre></div>
-</div>
-</section>
-<section id="get-battery-pack">
-<h2>GET <cite>/battery_pack</cite><a class="headerlink" href="#get-battery-pack" title="Link to this heading"></a></h2>
-<p><strong>Summary:</strong> Retrieve the properties of a group of battery packs.</p>
-<ul class="simple">
-<li><p><strong>Description:</strong> This endpoint fetches the details of a group of battery packs. Users can filter, sort, and paginate the results based on various query parameters.</p></li>
-<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
-<li><p><strong>Tags:</strong> Battery Pack, Read Asset</p></li>
-</ul>
-<p><strong>Query Parameters:</strong></p>
-<ul class="simple">
-<li><p><strong>limit</strong>: (integer) Maximum number of battery packs to return.</p></li>
-<li><p><strong>offset</strong>: (integer) Number of battery packs to skip for pagination.</p></li>
-<li><p><strong>search</strong>: (string) Search term to filter battery packs.</p></li>
-<li><p><strong>sort</strong>: (string) Attribute to sort the results by (e.g., <cite>model_name</cite>, <cite>location</cite>).</p></li>
-<li><p><strong>order</strong>: (string) Sorting order, either <cite>asc</cite> or <cite>desc</cite>.</p></li>
-<li><p><strong>status_label</strong>: (string) Filter by status of the battery packs (e.g., <cite>active</cite>, <cite>inactive</cite>).</p></li>
-</ul>
-<p><strong>Responses:</strong></p>
-<ul class="simple">
-<li><p><strong>200</strong>: Successful retrieval of battery pack details.</p></li>
-<li><p><strong>400</strong>: Invalid query parameters.</p></li>
-<li><p><strong>401</strong>: Unauthorized access (JWT missing or invalid).</p></li>
-<li><p><strong>403</strong>: Forbidden action.</p></li>
-<li><p><strong>404</strong>: No battery packs found.</p></li>
-<li><p><strong>408</strong>: Request timeout.</p></li>
-<li><p><strong>500</strong>: Internal server error.</p></li>
-<li><p><strong>502</strong>: Bad gateway.</p></li>
-</ul>
-<p><strong>Example Request:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;https://example.com/api/battery_pack?limit=10&amp;sort=model_name&amp;order=asc&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;JWT&gt;&quot;</span>
-</pre></div>
-</div>
-<p><strong>Example Response:</strong></p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
-<span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;model_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BP-1000&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;manufacturer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BatteryCo&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;owner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Company A&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Warehouse 12&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;active&quot;</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;model_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BP-2000&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;manufacturer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BatteryCo&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;owner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Company B&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Warehouse 15&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;inactive&quot;</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">]</span>
-</pre></div>
-</div>
-</section>
-<section id="patch-battery-pack">
-<h2>PATCH <cite>/battery_pack</cite><a class="headerlink" href="#patch-battery-pack" title="Link to this heading"></a></h2>
-<p><strong>Summary:</strong> Update the properties of a group of battery packs.</p>
-<ul class="simple">
-<li><p><strong>Description:</strong> This endpoint allows the bulk update of battery pack details. The updates are provided via a CSV file, and the endpoint requires proper authorization.</p></li>
-<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
-<li><p><strong>Tags:</strong> Battery Pack, Update Asset</p></li>
 </ul>
 <p><strong>Request Body:</strong></p>
 <ul class="simple">
-<li><p><strong>file</strong>: (binary) A CSV file containing the asset details to update.</p></li>
+<li><p>Choose either JSON input or upload a file with asset details.</p></li>
+<li><p><strong>file</strong>: (binary) The file containing the details of battery packs for bulk upload.</p></li>
 </ul>
 <p><strong>Responses:</strong></p>
 <ul class="simple">
-<li><p><strong>200</strong>: Successful update of battery pack details.</p></li>
-<li><p><strong>400</strong>: Invalid CSV file or parameters.</p></li>
-<li><p><strong>401</strong>: Unauthorized access (JWT missing or invalid).</p></li>
+<li><p><strong>201</strong>: Battery pack created successfully or bulk upload processed.</p></li>
+<li><p><strong>400</strong>: Invalid request.</p></li>
+<li><p><strong>401</strong>: Unauthorized access.</p></li>
 <li><p><strong>403</strong>: Forbidden action.</p></li>
-<li><p><strong>404</strong>: No battery packs found for update.</p></li>
+<li><p><strong>404</strong>: Battery pack not found.</p></li>
+<li><p><strong>408</strong>: Request timeout.</p></li>
+<li><p><strong>500</strong>: Internal server error.</p></li>
+<li><p><strong>502</strong>: Bad gateway.</p></li>
+</ul>
+<p><strong>Example Request (JSON):</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;https://example.com/api/battery_pack&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;JWT&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{ &quot;model_name&quot;: &quot;BP-1000&quot;, &quot;manufacturer&quot;: &quot;BatteryCo&quot;, &quot;status&quot;: &quot;active&quot; }&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="delete-battery-pack-i">
+<h2>DELETE <cite>/battery_pack/{i}</cite><a class="headerlink" href="#delete-battery-pack-i" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Delete an individual battery pack.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> This endpoint allows deletion of an individual battery pack specified by the <cite>{i}</cite> parameter.</p></li>
+<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
+</ul>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>i</strong>: (path) The ID of the battery pack to be deleted.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul class="simple">
+<li><p><strong>200</strong>: Battery pack deleted successfully.</p></li>
+<li><p><strong>400</strong>: Invalid request.</p></li>
+<li><p><strong>401</strong>: Unauthorized access.</p></li>
+<li><p><strong>403</strong>: Forbidden action.</p></li>
+<li><p><strong>404</strong>: Battery pack not found.</p></li>
 <li><p><strong>408</strong>: Request timeout.</p></li>
 <li><p><strong>500</strong>: Internal server error.</p></li>
 <li><p><strong>502</strong>: Bad gateway.</p></li>
 </ul>
 <p><strong>Example Request:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>PATCH<span class="w"> </span><span class="s2">&quot;https://example.com/api/battery_pack&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;JWT&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-F<span class="w"> </span><span class="s2">&quot;file=@battery_pack_update.csv&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span><span class="s2">&quot;https://example.com/api/battery_pack/1&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;JWT&gt;&quot;</span>
 </pre></div>
 </div>
-<p><strong>Example CSV Format:</strong></p>
-<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span>id,model_name,manufacturer,status
-1,BP-1000,BatteryCo,active
-2,BP-2000,BatteryCo,inactive
+</section>
+<section id="get-battery-pack-i">
+<h2>GET <cite>/battery_pack/{i}</cite><a class="headerlink" href="#get-battery-pack-i" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Read the properties of an individual battery pack.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> Retrieve details of a specific battery pack identified by the <cite>{i}</cite> parameter.</p></li>
+<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
+</ul>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>i</strong>: (path) The ID of the battery pack to retrieve.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul class="simple">
+<li><p><strong>200</strong>: Battery pack details returned successfully.</p></li>
+<li><p><strong>400</strong>: Invalid request.</p></li>
+<li><p><strong>401</strong>: Unauthorized access.</p></li>
+<li><p><strong>403</strong>: Forbidden action.</p></li>
+<li><p><strong>404</strong>: Battery pack not found.</p></li>
+<li><p><strong>408</strong>: Request timeout.</p></li>
+<li><p><strong>500</strong>: Internal server error.</p></li>
+<li><p><strong>502</strong>: Bad gateway.</p></li>
+</ul>
+<p><strong>Example Request:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;https://example.com/api/battery_pack/1&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;JWT&gt;&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="patch-battery-pack-i">
+<h2>PATCH <cite>/battery_pack/{i}</cite><a class="headerlink" href="#patch-battery-pack-i" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Update the properties of an individual battery pack.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> Modify the details of a specific battery pack.</p></li>
+<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
+</ul>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>i</strong>: (path) The ID of the battery pack to update.</p></li>
+</ul>
+<p><strong>Request Body:</strong></p>
+<ul class="simple">
+<li><p><strong>JSON</strong>: The properties to update for the battery pack.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul class="simple">
+<li><p><strong>200</strong>: Battery pack updated successfully.</p></li>
+<li><p><strong>400</strong>: Invalid request.</p></li>
+<li><p><strong>401</strong>: Unauthorized access.</p></li>
+<li><p><strong>403</strong>: Forbidden action.</p></li>
+<li><p><strong>404</strong>: Battery pack not found.</p></li>
+<li><p><strong>408</strong>: Request timeout.</p></li>
+<li><p><strong>500</strong>: Internal server error.</p></li>
+<li><p><strong>502</strong>: Bad gateway.</p></li>
+</ul>
+<p><strong>Example Request (JSON):</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>PATCH<span class="w"> </span><span class="s2">&quot;https://example.com/api/battery_pack/1&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;JWT&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{ &quot;model_name&quot;: &quot;BP-1000&quot;, &quot;status&quot;: &quot;inactive&quot; }&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="post-battery-pack-i-allocate">
+<h2>POST <cite>/battery_pack/{i}/allocate</cite><a class="headerlink" href="#post-battery-pack-i-allocate" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Allocate a battery pack to another asset, user, or location.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> Allocate an individual battery pack to another asset, user, or location.</p></li>
+<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
+</ul>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>i</strong>: (path) The ID of the battery pack to allocate.</p></li>
+</ul>
+<p><strong>Request Body:</strong></p>
+<ul class="simple">
+<li><p><strong>file</strong>: (binary) The file containing allocation details, or JSON input specifying the allocation.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul class="simple">
+<li><p><strong>200</strong>: Allocation processed successfully.</p></li>
+<li><p><strong>400</strong>: Invalid request.</p></li>
+<li><p><strong>401</strong>: Unauthorized access.</p></li>
+<li><p><strong>403</strong>: Forbidden action.</p></li>
+<li><p><strong>404</strong>: Battery pack not found.</p></li>
+<li><p><strong>408</strong>: Request timeout.</p></li>
+<li><p><strong>409</strong>: Conflict in allocation.</p></li>
+<li><p><strong>500</strong>: Internal server error.</p></li>
+<li><p><strong>502</strong>: Bad gateway.</p></li>
+</ul>
+<p><strong>Example Request:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;https://example.com/api/battery_pack/1/allocate&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;JWT&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{ &quot;location&quot;: &quot;Warehouse 12&quot; }&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="post-battery-pack-i-enable">
+<h2>POST <cite>/battery_pack/{i}/enable</cite><a class="headerlink" href="#post-battery-pack-i-enable" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Enable or disable an individual battery pack.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> Toggle the enable/disable status of a battery pack.</p></li>
+<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
+</ul>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>i</strong>: (path) The ID of the battery pack to enable or disable.</p></li>
+</ul>
+<p><strong>Request Body:</strong></p>
+<ul class="simple">
+<li><p><strong>JSON</strong>: Enable/disable data.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul class="simple">
+<li><p><strong>200</strong>: Battery pack status updated successfully.</p></li>
+<li><p><strong>400</strong>: Invalid request.</p></li>
+<li><p><strong>401</strong>: Unauthorized access.</p></li>
+<li><p><strong>403</strong>: Forbidden action.</p></li>
+<li><p><strong>404</strong>: Battery pack not found.</p></li>
+<li><p><strong>408</strong>: Request timeout.</p></li>
+<li><p><strong>500</strong>: Internal server error.</p></li>
+<li><p><strong>502</strong>: Bad gateway.</p></li>
+</ul>
+<p><strong>Example Request:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;https://example.com/api/battery_pack/1/enable&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;JWT&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{ &quot;enabled&quot;: true }&#39;</span>
 </pre></div>
 </div>
 </section>
@@ -206,7 +279,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="battery_pack_category.html" class="btn btn-neutral float-left" title="Battery Pack Category" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="assets_category.html" class="btn btn-neutral float-left" title="Assets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

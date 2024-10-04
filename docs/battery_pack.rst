@@ -1,116 +1,60 @@
 Battery Pack Endpoints
 ======================
 
-This section covers all operations available for Battery Packs, including reading, updating, and deleting groups of Battery Packs.
+This section covers all operations available for Battery Packs, including creating, reading, updating, deleting, and allocating battery packs.
 
-DELETE `/battery_pack`
-----------------------
+POST `/battery_pack`
+--------------------
 
-**Summary:** Delete a group of battery packs.
+**Summary:** Create a new battery pack.
 
-- **Description:** This endpoint allows the deletion of a group of battery packs. Only users with proper authorization (JWT) can perform this action.
+- **Description:** This endpoint allows for the creation of a new battery pack or bulk creation via file upload.
 - **Security:** Requires JWT authentication.
-- **Tags:** Battery Pack, Delete Asset
-
-**Responses:**
-
-- **200**: Successful deletion of the battery pack group.
-- **400**: Invalid request.
-- **401**: Unauthorized access (JWT missing or invalid).
-- **403**: Forbidden action.
-- **404**: Battery pack group not found.
-- **408**: Request timeout.
-- **500**: Internal server error.
-- **502**: Bad gateway.
-
-**Example Request:**
-
-.. code-block:: bash
-
-   curl -X DELETE "https://example.com/api/battery_pack" \
-       -H "Authorization: Bearer <JWT>" 
-
-
-GET `/battery_pack`
--------------------
-
-**Summary:** Retrieve the properties of a group of battery packs.
-
-- **Description:** This endpoint fetches the details of a group of battery packs. Users can filter, sort, and paginate the results based on various query parameters.
-- **Security:** Requires JWT authentication.
-- **Tags:** Battery Pack, Read Asset
-
-**Query Parameters:**
-
-- **limit**: (integer) Maximum number of battery packs to return.
-- **offset**: (integer) Number of battery packs to skip for pagination.
-- **search**: (string) Search term to filter battery packs.
-- **sort**: (string) Attribute to sort the results by (e.g., `model_name`, `location`).
-- **order**: (string) Sorting order, either `asc` or `desc`.
-- **status_label**: (string) Filter by status of the battery packs (e.g., `active`, `inactive`).
-
-**Responses:**
-
-- **200**: Successful retrieval of battery pack details.
-- **400**: Invalid query parameters.
-- **401**: Unauthorized access (JWT missing or invalid).
-- **403**: Forbidden action.
-- **404**: No battery packs found.
-- **408**: Request timeout.
-- **500**: Internal server error.
-- **502**: Bad gateway.
-
-**Example Request:**
-
-.. code-block:: bash
-
-   curl -X GET "https://example.com/api/battery_pack?limit=10&sort=model_name&order=asc" \
-       -H "Authorization: Bearer <JWT>"
-
-**Example Response:**
-
-.. code-block:: json
-
-   [
-     {
-       "id": 1,
-       "model_name": "BP-1000",
-       "manufacturer": "BatteryCo",
-       "owner": "Company A",
-       "location": "Warehouse 12",
-       "status": "active"
-     },
-     {
-       "id": 2,
-       "model_name": "BP-2000",
-       "manufacturer": "BatteryCo",
-       "owner": "Company B",
-       "location": "Warehouse 15",
-       "status": "inactive"
-     }
-   ]
-
-
-PATCH `/battery_pack`
----------------------
-
-**Summary:** Update the properties of a group of battery packs.
-
-- **Description:** This endpoint allows the bulk update of battery pack details. The updates are provided via a CSV file, and the endpoint requires proper authorization.
-- **Security:** Requires JWT authentication.
-- **Tags:** Battery Pack, Update Asset
 
 **Request Body:**
 
-- **file**: (binary) A CSV file containing the asset details to update.
+- Choose either JSON input or upload a file with asset details.
+- **file**: (binary) The file containing the details of battery packs for bulk upload.
 
 **Responses:**
 
-- **200**: Successful update of battery pack details.
-- **400**: Invalid CSV file or parameters.
-- **401**: Unauthorized access (JWT missing or invalid).
+- **201**: Battery pack created successfully or bulk upload processed.
+- **400**: Invalid request.
+- **401**: Unauthorized access.
 - **403**: Forbidden action.
-- **404**: No battery packs found for update.
+- **404**: Battery pack not found.
+- **408**: Request timeout.
+- **500**: Internal server error.
+- **502**: Bad gateway.
+
+**Example Request (JSON):**
+
+.. code-block:: bash
+
+   curl -X POST "https://example.com/api/battery_pack" \
+       -H "Authorization: Bearer <JWT>" \
+       -d '{ "model_name": "BP-1000", "manufacturer": "BatteryCo", "status": "active" }'
+
+
+DELETE `/battery_pack/{i}`
+--------------------------
+
+**Summary:** Delete an individual battery pack.
+
+- **Description:** This endpoint allows deletion of an individual battery pack specified by the `{i}` parameter.
+- **Security:** Requires JWT authentication.
+
+**Parameters:**
+
+- **i**: (path) The ID of the battery pack to be deleted.
+
+**Responses:**
+
+- **200**: Battery pack deleted successfully.
+- **400**: Invalid request.
+- **401**: Unauthorized access.
+- **403**: Forbidden action.
+- **404**: Battery pack not found.
 - **408**: Request timeout.
 - **500**: Internal server error.
 - **502**: Bad gateway.
@@ -119,14 +63,145 @@ PATCH `/battery_pack`
 
 .. code-block:: bash
 
-   curl -X PATCH "https://example.com/api/battery_pack" \
+   curl -X DELETE "https://example.com/api/battery_pack/1" \
+       -H "Authorization: Bearer <JWT>" 
+
+
+GET `/battery_pack/{i}`
+-----------------------
+
+**Summary:** Read the properties of an individual battery pack.
+
+- **Description:** Retrieve details of a specific battery pack identified by the `{i}` parameter.
+- **Security:** Requires JWT authentication.
+
+**Parameters:**
+
+- **i**: (path) The ID of the battery pack to retrieve.
+
+**Responses:**
+
+- **200**: Battery pack details returned successfully.
+- **400**: Invalid request.
+- **401**: Unauthorized access.
+- **403**: Forbidden action.
+- **404**: Battery pack not found.
+- **408**: Request timeout.
+- **500**: Internal server error.
+- **502**: Bad gateway.
+
+**Example Request:**
+
+.. code-block:: bash
+
+   curl -X GET "https://example.com/api/battery_pack/1" \
+       -H "Authorization: Bearer <JWT>"
+
+
+PATCH `/battery_pack/{i}`
+-------------------------
+
+**Summary:** Update the properties of an individual battery pack.
+
+- **Description:** Modify the details of a specific battery pack.
+- **Security:** Requires JWT authentication.
+
+**Parameters:**
+
+- **i**: (path) The ID of the battery pack to update.
+
+**Request Body:**
+
+- **JSON**: The properties to update for the battery pack.
+
+**Responses:**
+
+- **200**: Battery pack updated successfully.
+- **400**: Invalid request.
+- **401**: Unauthorized access.
+- **403**: Forbidden action.
+- **404**: Battery pack not found.
+- **408**: Request timeout.
+- **500**: Internal server error.
+- **502**: Bad gateway.
+
+**Example Request (JSON):**
+
+.. code-block:: bash
+
+   curl -X PATCH "https://example.com/api/battery_pack/1" \
        -H "Authorization: Bearer <JWT>" \
-       -F "file=@battery_pack_update.csv"
+       -d '{ "model_name": "BP-1000", "status": "inactive" }'
 
-**Example CSV Format:**
 
-.. code-block:: csv
+POST `/battery_pack/{i}/allocate`
+---------------------------------
 
-   id,model_name,manufacturer,status
-   1,BP-1000,BatteryCo,active
-   2,BP-2000,BatteryCo,inactive
+**Summary:** Allocate a battery pack to another asset, user, or location.
+
+- **Description:** Allocate an individual battery pack to another asset, user, or location.
+- **Security:** Requires JWT authentication.
+
+**Parameters:**
+
+- **i**: (path) The ID of the battery pack to allocate.
+
+**Request Body:**
+
+- **file**: (binary) The file containing allocation details, or JSON input specifying the allocation.
+
+**Responses:**
+
+- **200**: Allocation processed successfully.
+- **400**: Invalid request.
+- **401**: Unauthorized access.
+- **403**: Forbidden action.
+- **404**: Battery pack not found.
+- **408**: Request timeout.
+- **409**: Conflict in allocation.
+- **500**: Internal server error.
+- **502**: Bad gateway.
+
+**Example Request:**
+
+.. code-block:: bash
+
+   curl -X POST "https://example.com/api/battery_pack/1/allocate" \
+       -H "Authorization: Bearer <JWT>" \
+       -d '{ "location": "Warehouse 12" }'
+
+
+POST `/battery_pack/{i}/enable`
+-------------------------------
+
+**Summary:** Enable or disable an individual battery pack.
+
+- **Description:** Toggle the enable/disable status of a battery pack.
+- **Security:** Requires JWT authentication.
+
+**Parameters:**
+
+- **i**: (path) The ID of the battery pack to enable or disable.
+
+**Request Body:**
+
+- **JSON**: Enable/disable data.
+
+**Responses:**
+
+- **200**: Battery pack status updated successfully.
+- **400**: Invalid request.
+- **401**: Unauthorized access.
+- **403**: Forbidden action.
+- **404**: Battery pack not found.
+- **408**: Request timeout.
+- **500**: Internal server error.
+- **502**: Bad gateway.
+
+**Example Request:**
+
+.. code-block:: bash
+
+   curl -X POST "https://example.com/api/battery_pack/1/enable" \
+       -H "Authorization: Bearer <JWT>" \
+       -d '{ "enabled": true }'
