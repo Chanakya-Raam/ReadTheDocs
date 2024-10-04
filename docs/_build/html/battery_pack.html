@@ -88,15 +88,17 @@
 <li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
 <li><p><strong>Tags:</strong> Battery Pack, Delete Asset</p></li>
 </ul>
-<p><strong>Responses:</strong>
-- <strong>200</strong>: Successful deletion of the battery pack group.
-- <strong>400</strong>: Invalid request.
-- <strong>401</strong>: Unauthorized access (JWT missing or invalid).
-- <strong>403</strong>: Forbidden action.
-- <strong>404</strong>: Battery pack group not found.
-- <strong>408</strong>: Request timeout.
-- <strong>500</strong>: Internal server error.
-- <strong>502</strong>: Bad gateway.</p>
+<p><strong>Responses:</strong></p>
+<ul class="simple">
+<li><p><strong>200</strong>: Successful deletion of the battery pack group.</p></li>
+<li><p><strong>400</strong>: Invalid request.</p></li>
+<li><p><strong>401</strong>: Unauthorized access (JWT missing or invalid).</p></li>
+<li><p><strong>403</strong>: Forbidden action.</p></li>
+<li><p><strong>404</strong>: Battery pack group not found.</p></li>
+<li><p><strong>408</strong>: Request timeout.</p></li>
+<li><p><strong>500</strong>: Internal server error.</p></li>
+<li><p><strong>502</strong>: Bad gateway.</p></li>
+</ul>
 <p><strong>Example Request:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span><span class="s2">&quot;https://example.com/api/battery_pack&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;JWT&gt;&quot;</span>
@@ -111,22 +113,26 @@
 <li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
 <li><p><strong>Tags:</strong> Battery Pack, Read Asset</p></li>
 </ul>
-<p><strong>Query Parameters:</strong>
-- <strong>limit</strong>: (integer) Maximum number of battery packs to return.
-- <strong>offset</strong>: (integer) Number of battery packs to skip for pagination.
-- <strong>search</strong>: (string) Search term to filter battery packs.
-- <strong>sort</strong>: (string) Attribute to sort the results by (e.g., <cite>model_name</cite>, <cite>location</cite>).
-- <strong>order</strong>: (string) Sorting order, either <cite>asc</cite> or <cite>desc</cite>.
-- <strong>status_label</strong>: (string) Filter by status of the battery packs (e.g., <cite>active</cite>, <cite>inactive</cite>).</p>
-<p><strong>Responses:</strong>
-- <strong>200</strong>: Successful retrieval of battery pack details.
-- <strong>400</strong>: Invalid query parameters.
-- <strong>401</strong>: Unauthorized access (JWT missing or invalid).
-- <strong>403</strong>: Forbidden action.
-- <strong>404</strong>: No battery packs found.
-- <strong>408</strong>: Request timeout.
-- <strong>500</strong>: Internal server error.
-- <strong>502</strong>: Bad gateway.</p>
+<p><strong>Query Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>limit</strong>: (integer) Maximum number of battery packs to return.</p></li>
+<li><p><strong>offset</strong>: (integer) Number of battery packs to skip for pagination.</p></li>
+<li><p><strong>search</strong>: (string) Search term to filter battery packs.</p></li>
+<li><p><strong>sort</strong>: (string) Attribute to sort the results by (e.g., <cite>model_name</cite>, <cite>location</cite>).</p></li>
+<li><p><strong>order</strong>: (string) Sorting order, either <cite>asc</cite> or <cite>desc</cite>.</p></li>
+<li><p><strong>status_label</strong>: (string) Filter by status of the battery packs (e.g., <cite>active</cite>, <cite>inactive</cite>).</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul class="simple">
+<li><p><strong>200</strong>: Successful retrieval of battery pack details.</p></li>
+<li><p><strong>400</strong>: Invalid query parameters.</p></li>
+<li><p><strong>401</strong>: Unauthorized access (JWT missing or invalid).</p></li>
+<li><p><strong>403</strong>: Forbidden action.</p></li>
+<li><p><strong>404</strong>: No battery packs found.</p></li>
+<li><p><strong>408</strong>: Request timeout.</p></li>
+<li><p><strong>500</strong>: Internal server error.</p></li>
+<li><p><strong>502</strong>: Bad gateway.</p></li>
+</ul>
 <p><strong>Example Request:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;https://example.com/api/battery_pack?limit=10&amp;sort=model_name&amp;order=asc&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;JWT&gt;&quot;</span>
@@ -162,17 +168,21 @@
 <li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
 <li><p><strong>Tags:</strong> Battery Pack, Update Asset</p></li>
 </ul>
-<p><strong>Request Body:</strong>
-- <strong>file</strong>: (binary) A CSV file containing the asset details to update.</p>
-<p><strong>Responses:</strong>
-- <strong>200</strong>: Successful update of battery pack details.
-- <strong>400</strong>: Invalid CSV file or parameters.
-- <strong>401</strong>: Unauthorized access (JWT missing or invalid).
-- <strong>403</strong>: Forbidden action.
-- <strong>404</strong>: No battery packs found for update.
-- <strong>408</strong>: Request timeout.
-- <strong>500</strong>: Internal server error.
-- <strong>502</strong>: Bad gateway.</p>
+<p><strong>Request Body:</strong></p>
+<ul class="simple">
+<li><p><strong>file</strong>: (binary) A CSV file containing the asset details to update.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul class="simple">
+<li><p><strong>200</strong>: Successful update of battery pack details.</p></li>
+<li><p><strong>400</strong>: Invalid CSV file or parameters.</p></li>
+<li><p><strong>401</strong>: Unauthorized access (JWT missing or invalid).</p></li>
+<li><p><strong>403</strong>: Forbidden action.</p></li>
+<li><p><strong>404</strong>: No battery packs found for update.</p></li>
+<li><p><strong>408</strong>: Request timeout.</p></li>
+<li><p><strong>500</strong>: Internal server error.</p></li>
+<li><p><strong>502</strong>: Bad gateway.</p></li>
+</ul>
 <p><strong>Example Request:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>PATCH<span class="w"> </span><span class="s2">&quot;https://example.com/api/battery_pack&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;JWT&gt;&quot;</span><span class="w"> </span><span class="se">\</span>

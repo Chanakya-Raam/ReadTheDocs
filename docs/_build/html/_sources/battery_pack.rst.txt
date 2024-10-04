@@ -13,6 +13,7 @@ DELETE `/battery_pack`
 - **Tags:** Battery Pack, Delete Asset
 
 **Responses:**
+
 - **200**: Successful deletion of the battery pack group.
 - **400**: Invalid request.
 - **401**: Unauthorized access (JWT missing or invalid).
@@ -40,6 +41,7 @@ GET `/battery_pack`
 - **Tags:** Battery Pack, Read Asset
 
 **Query Parameters:**
+
 - **limit**: (integer) Maximum number of battery packs to return.
 - **offset**: (integer) Number of battery packs to skip for pagination.
 - **search**: (string) Search term to filter battery packs.
@@ -48,6 +50,7 @@ GET `/battery_pack`
 - **status_label**: (string) Filter by status of the battery packs (e.g., `active`, `inactive`).
 
 **Responses:**
+
 - **200**: Successful retrieval of battery pack details.
 - **400**: Invalid query parameters.
 - **401**: Unauthorized access (JWT missing or invalid).
@@ -98,9 +101,11 @@ PATCH `/battery_pack`
 - **Tags:** Battery Pack, Update Asset
 
 **Request Body:**
+
 - **file**: (binary) A CSV file containing the asset details to update.
 
 **Responses:**
+
 - **200**: Successful update of battery pack details.
 - **400**: Invalid CSV file or parameters.
 - **401**: Unauthorized access (JWT missing or invalid).
