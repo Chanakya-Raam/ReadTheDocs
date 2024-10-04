@@ -97,35 +97,26 @@
 <li><p><strong>Description:</strong> This endpoint allows for the creation of a new battery pack or bulk creation via file upload.</p></li>
 <li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
 </ul>
-<p><strong>Request Body:</strong></p>
-<ul class="simple">
-<li><p>Choose either JSON input or upload a file with asset details.</p></li>
-</ul>
-<p>Example (JSON):
-.. code-block:: json</p>
-<blockquote>
-<div><dl>
-<dt>{</dt><dd><p>“asset_tag”: “IRASUS01”,
-“company”: “Irasus Technologies Private Limited”,
-“status_label”: “In Warehouse”,
-“model”: “Model X”,
-“manufacturer_name”: “Irasus Technologies Private Limited”,
-“location”: “Delhi”,
-“warranty_months”: “3”,
-“battery_pack”: {</p>
-<blockquote>
-<div><p>“battery_cell_chemistry”: “Li-NMC”,
-“battery_pack_nominal_voltage”: “48 V”,
-“battery_pack_nominal_charge_capacity”: “48 Ah”,
-“bms_type”: “Firmware”,
-“battery_cell_type”: “Cylindrical”,
-“battery_pack_casing”: “Plastic”</p>
-</div></blockquote>
-<p>}</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
+<p><strong>Request Body (JSON Example):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRASUS01&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Warehouse&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Model X&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;manufacturer_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Delhi&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;warranty_months&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;battery_pack&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;battery_cell_chemistry&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Li-NMC&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;battery_pack_nominal_voltage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;48 V&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;battery_pack_nominal_charge_capacity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;48 Ah&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;bms_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Firmware&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;battery_cell_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cylindrical&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;battery_pack_casing&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Plastic&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p><strong>Responses:</strong></p>
 <ul class="simple">
 <li><p><strong>201</strong>: Battery pack created successfully.</p></li>
@@ -133,11 +124,9 @@
 <li><p><strong>401</strong>: Unauthorized access.</p></li>
 <li><p><strong>403</strong>: Access forbidden.</p></li>
 <li><p><strong>404</strong>: Resource not found.</p></li>
-<li><p><strong>408</strong>: Request timeout.</p></li>
 <li><p><strong>409</strong>: Resource already exists.</p></li>
 <li><p><strong>500</strong>: Internal server error.</p></li>
 </ul>
-<p>—</p>
 </section>
 <section id="delete-battery-pack">
 <h2>DELETE <cite>/battery_pack</cite><a class="headerlink" href="#delete-battery-pack" title="Link to this heading"></a></h2>
@@ -152,10 +141,9 @@
 <li><p><strong>401</strong>: Unauthorized access.</p></li>
 <li><p><strong>403</strong>: Access forbidden.</p></li>
 <li><p><strong>404</strong>: Resource not found.</p></li>
-<li><p><strong>408</strong>: Request timeout.</p></li>
 <li><p><strong>500</strong>: Internal server error.</p></li>
 </ul>
-<p><strong>Example Request</strong>:</p>
+<p><strong>Example Request:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span><span class="s2">&quot;https://example.com/api/battery_pack&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;JWT&gt;&quot;</span>
 </pre></div>
@@ -170,7 +158,6 @@
 </ul>
 <p><strong>Query Parameters:</strong></p>
 <ul class="simple">
-<li><p><strong>battery_pack</strong>: Filter based on the battery pack.</p></li>
 <li><p><strong>limit</strong>: Maximum number of battery packs to return.</p></li>
 <li><p><strong>offset</strong>: Number of battery packs to skip before starting to collect the result set.</p></li>
 <li><p><strong>search</strong>: General search term.</p></li>
@@ -186,44 +173,37 @@
 <ul class="simple">
 <li><p><strong>200</strong>: Successfully retrieved battery packs.</p></li>
 </ul>
-<p>Example response (JSON):
-.. code-block:: json</p>
-<blockquote>
-<div><dl>
-<dt>[</dt><dd><dl>
-<dt>{</dt><dd><p>“asset_tag”: “IRASUS01”,
-“company”: “Irasus Technologies Private Limited”,
-“status_label”: “In Warehouse”,
-“model”: “Model X”,
-“manufacturer_name”: “Irasus Technologies Private Limited”,
-“location”: “Delhi”,
-“warranty_months”: “3”,
-“battery_pack”: {</p>
-<blockquote>
-<div><p>“battery_cell_chemistry”: “Li-NMC”,
-“battery_pack_nominal_voltage”: “48 V”,
-“battery_pack_nominal_charge_capacity”: “48 Ah”,
-“bms_type”: “Firmware”,
-“battery_cell_type”: “Cylindrical”,
-“battery_pack_casing”: “Plastic”</p>
-</div></blockquote>
-<p>}</p>
-</dd>
-</dl>
-<p>}</p>
-</dd>
-</dl>
-<p>]</p>
-</div></blockquote>
+<p><strong>Example Response (JSON):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRASUS01&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Warehouse&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Model X&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;manufacturer_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Delhi&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;warranty_months&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;battery_pack&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;battery_cell_chemistry&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Li-NMC&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;battery_pack_nominal_voltage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;48 V&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;battery_pack_nominal_charge_capacity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;48 Ah&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;bms_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Firmware&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;battery_cell_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cylindrical&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;battery_pack_casing&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Plastic&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
 <p>—</p>
 </section>
 <section id="patch-battery-pack">
 <h2>PATCH <cite>/battery_pack</cite><a class="headerlink" href="#patch-battery-pack" title="Link to this heading"></a></h2>
 <p><strong>Summary:</strong> Update the properties of a group of battery packs.</p>
 <ul class="simple">
-<li><p><strong>Description:</strong> This endpoint allows the bulk update of battery pack details. The updates are provided via a CSV file.</p></li>
+<li><p><strong>Description:</strong> This endpoint allows the bulk update of battery pack details. The updates are provided via a CSV file or JSON input.</p></li>
 </ul>
-<p><strong>Request Body:</strong></p>
+<p><strong>Request Body (CSV File):</strong></p>
 <ul class="simple">
 <li><p><strong>file</strong>: (binary) A CSV file containing the asset details to update.</p></li>
 </ul>
@@ -234,7 +214,6 @@
 <li><p><strong>401</strong>: Unauthorized access.</p></li>
 <li><p><strong>403</strong>: Access forbidden.</p></li>
 <li><p><strong>404</strong>: Resource not found.</p></li>
-<li><p><strong>408</strong>: Request timeout.</p></li>
 <li><p><strong>500</strong>: Internal server error.</p></li>
 </ul>
 <p>—</p>
@@ -253,18 +232,15 @@
 <ul class="simple">
 <li><p><strong>200</strong>: Asset deleted successfully.</p></li>
 </ul>
-<p>Example response (JSON):
-.. code-block:: json</p>
-<blockquote>
-<div><dl class="simple">
-<dt>{</dt><dd><p>“status”: “success”,
-“message”: “Asset deleted successfully”,
-“deletedAt”: “2024-07-30T12:34:56Z”,
-“asset_tag”: “IRASUS01”</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
+<p><strong>Example Response (JSON):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Asset deleted successfully&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;deletedAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-07-30T12:34:56Z&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRASUS01&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p>—</p>
 </section>
 <section id="get-battery-pack-i">
@@ -281,30 +257,25 @@
 <ul class="simple">
 <li><p><strong>200</strong>: Battery pack details returned successfully.</p></li>
 </ul>
-<p>Example response (JSON):
-.. code-block:: json</p>
-<blockquote>
-<div><dl>
-<dt>{</dt><dd><p>“asset_tag”: “IRASUS01”,
-“company”: “Irasus Technologies Private Limited”,
-“status_label”: “In Warehouse”,
-“model”: “Model X”,
-“manufacturer_name”: “Irasus Technologies Private Limited”,
-“location”: “Delhi”,
-“battery_pack”: {</p>
-<blockquote>
-<div><p>“battery_cell_chemistry”: “Li-NMC”,
-“battery_pack_nominal_voltage”: “48 V”,
-“battery_pack_nominal_charge_capacity”: “48 Ah”,
-“bms_type”: “Firmware”,
-“battery_cell_type”: “Cylindrical”,
-“battery_pack_casing”: “Plastic”</p>
-</div></blockquote>
-<p>}</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
+<p><strong>Example Response (JSON):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRASUS01&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Warehouse&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Model X&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;manufacturer_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Delhi&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;battery_pack&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;battery_cell_chemistry&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Li-NMC&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;battery_pack_nominal_voltage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;48 V&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;battery_pack_nominal_charge_capacity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;48 Ah&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;bms_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Firmware&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;battery_cell_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cylindrical&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;battery_pack_casing&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Plastic&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p>—</p>
 </section>
 <section id="patch-battery-pack-i">
@@ -317,10 +288,25 @@
 <ul class="simple">
 <li><p><strong>i</strong>: Identifier of the individual battery pack.</p></li>
 </ul>
-<p><strong>Request Body:</strong></p>
-<ul class="simple">
-<li><p><strong>JSON</strong>: Input containing the asset details.</p></li>
-</ul>
+<p><strong>Request Body (JSON):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRASUS01&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Warehouse&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Model X&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;manufacturer_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Delhi&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;battery_pack&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;battery_cell_chemistry&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Li-NMC&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;battery_pack_nominal_voltage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;48 V&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;battery_pack_nominal_charge_capacity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;48 Ah&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;bms_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Firmware&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;battery_cell_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cylindrical&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;battery_pack_casing&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Plastic&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p><strong>Responses:</strong></p>
 <ul class="simple">
 <li><p><strong>200</strong>: Asset updated successfully.</p></li>
@@ -337,21 +323,14 @@
 <ul class="simple">
 <li><p><strong>i</strong>: Identifier of the individual battery pack.</p></li>
 </ul>
-<p><strong>Request Body:</strong></p>
-<ul class="simple">
-<li><p><strong>JSON</strong>: Input for allocation.</p></li>
-</ul>
-<p>Example request (JSON):
-.. code-block:: json</p>
-<blockquote>
-<div><dl class="simple">
-<dt>{</dt><dd><p>“target_category”: “Vehicle”,
-“target_individual”: “IRASUS01”,
-“status_label”: “In Vehicle”</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
+<p><strong>Request Body (JSON):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;target_category&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Vehicle&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;target_individual&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRASUS01&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Vehicle&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p>—</p>
 </section>
 <section id="post-battery-pack-i-enable">
@@ -364,24 +343,25 @@
 <ul class="simple">
 <li><p><strong>i</strong>: Identifier of the individual battery pack.</p></li>
 </ul>
-<p><strong>Request Body:</strong></p>
-<ul class="simple">
-<li><p><strong>JSON</strong>: Input for enable/disable operation.</p></li>
-</ul>
+<p><strong>Request Body (JSON):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;operation_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;enable&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;operation_specifications&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;discharging&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Warehouse&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p><strong>Responses:</strong></p>
 <ul class="simple">
 <li><p><strong>200</strong>: Asset enabled or disabled successfully.</p></li>
 </ul>
-<p>Example response (JSON):
-.. code-block:: json</p>
-<blockquote>
-<div><dl class="simple">
-<dt>{</dt><dd><p>“issuedAt”: “2024-09-04 00:00:00+05:30”,
-“enabledAt”: “2024-09-04 00:00:00+05:30”</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
+<p><strong>Example Response (JSON):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;issuedAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-09-04 00:00:00+05:30&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;enabledAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-09-04 00:00:00+05:30&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </section>
 </section>
 

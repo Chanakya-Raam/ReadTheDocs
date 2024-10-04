@@ -11,11 +11,8 @@ POST `/battery_pack`
 - **Description:** This endpoint allows for the creation of a new battery pack or bulk creation via file upload.
 - **Security:** Requires JWT authentication.
 
-**Request Body:**
+**Request Body (JSON Example):**
 
-- Choose either JSON input or upload a file with asset details.
-  
-Example (JSON):
 .. code-block:: json
 
    {
@@ -43,11 +40,9 @@ Example (JSON):
 - **401**: Unauthorized access.
 - **403**: Access forbidden.
 - **404**: Resource not found.
-- **408**: Request timeout.
 - **409**: Resource already exists.
 - **500**: Internal server error.
 
----
 
 DELETE `/battery_pack`
 ----------------------
@@ -63,10 +58,9 @@ DELETE `/battery_pack`
 - **401**: Unauthorized access.
 - **403**: Access forbidden.
 - **404**: Resource not found.
-- **408**: Request timeout.
 - **500**: Internal server error.
 
-**Example Request**:
+**Example Request:**
 
 .. code-block:: bash
 
@@ -84,7 +78,6 @@ GET `/battery_pack`
 
 **Query Parameters:**
 
-- **battery_pack**: Filter based on the battery pack.
 - **limit**: Maximum number of battery packs to return.
 - **offset**: Number of battery packs to skip before starting to collect the result set.
 - **search**: General search term.
@@ -100,7 +93,8 @@ GET `/battery_pack`
 
 - **200**: Successfully retrieved battery packs.
 
-Example response (JSON):
+**Example Response (JSON):**
+
 .. code-block:: json
 
    [
@@ -130,9 +124,9 @@ PATCH `/battery_pack`
 
 **Summary:** Update the properties of a group of battery packs.
 
-- **Description:** This endpoint allows the bulk update of battery pack details. The updates are provided via a CSV file.
+- **Description:** This endpoint allows the bulk update of battery pack details. The updates are provided via a CSV file or JSON input.
 
-**Request Body:**
+**Request Body (CSV File):**
 
 - **file**: (binary) A CSV file containing the asset details to update.
 
@@ -143,7 +137,6 @@ PATCH `/battery_pack`
 - **401**: Unauthorized access.
 - **403**: Access forbidden.
 - **404**: Resource not found.
-- **408**: Request timeout.
 - **500**: Internal server error.
 
 ---
@@ -163,7 +156,8 @@ DELETE `/battery_pack/{i}`
 
 - **200**: Asset deleted successfully.
 
-Example response (JSON):
+**Example Response (JSON):**
+
 .. code-block:: json
 
    {
@@ -190,7 +184,8 @@ GET `/battery_pack/{i}`
 
 - **200**: Battery pack details returned successfully.
 
-Example response (JSON):
+**Example Response (JSON):**
+
 .. code-block:: json
 
    {
@@ -223,9 +218,26 @@ PATCH `/battery_pack/{i}`
 
 - **i**: Identifier of the individual battery pack.
 
-**Request Body:**
+**Request Body (JSON):**
 
-- **JSON**: Input containing the asset details.
+.. code-block:: json
+
+   {
+     "asset_tag": "IRASUS01",
+     "company": "Irasus Technologies Private Limited",
+     "status_label": "In Warehouse",
+     "model": "Model X",
+     "manufacturer_name": "Irasus Technologies Private Limited",
+     "location": "Delhi",
+     "battery_pack": {
+       "battery_cell_chemistry": "Li-NMC",
+       "battery_pack_nominal_voltage": "48 V",
+       "battery_pack_nominal_charge_capacity": "48 Ah",
+       "bms_type": "Firmware",
+       "battery_cell_type": "Cylindrical",
+       "battery_pack_casing": "Plastic"
+     }
+   }
 
 **Responses:**
 
@@ -244,11 +256,8 @@ POST `/battery_pack/{i}/allocate`
 
 - **i**: Identifier of the individual battery pack.
 
-**Request Body:**
+**Request Body (JSON):**
 
-- **JSON**: Input for allocation.
-
-Example request (JSON):
 .. code-block:: json
 
    {
@@ -270,15 +279,22 @@ POST `/battery_pack/{i}/enable`
 
 - **i**: Identifier of the individual battery pack.
 
-**Request Body:**
+**Request Body (JSON):**
 
-- **JSON**: Input for enable/disable operation.
+.. code-block:: json
+
+   {
+     "operation_type": "enable",
+     "operation_specifications": "discharging",
+     "status_label": "In Warehouse"
+   }
 
 **Responses:**
 
 - **200**: Asset enabled or disabled successfully.
 
-Example response (JSON):
+**Example Response (JSON):**
+
 .. code-block:: json
 
    {
