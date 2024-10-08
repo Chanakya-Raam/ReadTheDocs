@@ -6,40 +6,42 @@ This section covers all operations available for SIM Cards, including creating, 
 Table of Operations
 ===================
 
-+-------------------+--------------------------------------------------+------------------------------------+
-| **Method**        | **Description**                                  | **Endpoint**                       |
-+===================+==================================================+====================================+
-| POST              | Create a new SIM card or upload in bulk          | /sim_card                          |
-+-------------------+--------------------------------------------------+------------------------------------+
-| DELETE            | Delete a group of SIM cards                      | /sim_card                          |
-+-------------------+--------------------------------------------------+------------------------------------+
-| GET               | Read the properties of a group of SIM cards      | /sim_card                          |
-+-------------------+--------------------------------------------------+------------------------------------+
-| PATCH             | Update the properties of a group of SIM cards    | /sim_card                          |
-+-------------------+--------------------------------------------------+------------------------------------+
-| DELETE            | Delete an individual SIM card                    | /sim_card/{i}                      |
-+-------------------+--------------------------------------------------+------------------------------------+
-| GET               | Read the properties of an individual SIM card    | /sim_card/{i}                      |
-+-------------------+--------------------------------------------------+------------------------------------+
-| PATCH             | Update the properties of an individual SIM card  | /sim_card/{i}                      |
-+-------------------+--------------------------------------------------+------------------------------------+
-| POST              | Allocate a SIM card to another entity            | /sim_card/{i}/allocate             |
-+-------------------+--------------------------------------------------+------------------------------------+
-| POST              | Enable or disable a SIM card                     | /sim_card/{i}/enable               |
-+-------------------+--------------------------------------------------+------------------------------------+
-| POST              | Activate a telecommunication service subscription| /sim_card/{i}/activate             |
-+-------------------+--------------------------------------------------+------------------------------------+
++-------------------+--------------------------------------------------+----------------------------------+
+| **Method**        | **Description**                                  | **Endpoint**                     |
++===================+==================================================+==================================+
+| POST              | Create a new SIM card or upload in bulk          | /sim_card                        |
++-------------------+--------------------------------------------------+----------------------------------+
+| DELETE            | Delete a group of SIM cards                      | /sim_card                        |
++-------------------+--------------------------------------------------+----------------------------------+
+| GET               | Read the properties of a group of SIM cards      | /sim_card                        |
++-------------------+--------------------------------------------------+----------------------------------+
+| PATCH             | Update the properties of a group of SIM cards    | /sim_card                        |
++-------------------+--------------------------------------------------+----------------------------------+
+| DELETE            | Delete an individual SIM card                    | /sim_card/{i}                    |
++-------------------+--------------------------------------------------+----------------------------------+
+| GET               | Read the properties of an individual SIM card    | /sim_card/{i}                    |
++-------------------+--------------------------------------------------+----------------------------------+
+| PATCH             | Update the properties of an individual SIM card  | /sim_card/{i}                    |
++-------------------+--------------------------------------------------+----------------------------------+
+| POST              | Allocate a SIM card to another entity            | /sim_card/{i}/allocate           |
++-------------------+--------------------------------------------------+----------------------------------+
+| POST              | Enable or disable a SIM card                     | /sim_card/{i}/enable             |
++-------------------+--------------------------------------------------+----------------------------------+
+| POST              | Activate a telecommunication service subscription| /sim_card/{i}/activate           |
++-------------------+--------------------------------------------------+----------------------------------+
 
 ---
 
 POST /sim_card
 --------------
+
 **Summary:** Create a new SIM card.
 
 - **Description:** This endpoint allows for the creation of a new SIM card or bulk creation via file upload.
 - **Security:** Requires JWT authentication.
 
 **Request Body (JSON Example):**
+
 .. code-block:: json
 
    {
@@ -65,6 +67,7 @@ POST /sim_card
 
 DELETE /sim_card
 ----------------
+
 **Summary:** Delete a group of SIM cards.
 
 - **Description:** This endpoint allows the deletion of a group of SIM cards. Requires JWT authorization.
@@ -82,6 +85,7 @@ DELETE /sim_card
 
 GET /sim_card
 -------------
+
 **Summary:** Read the properties of a group of SIM cards.
 
 - **Description:** Retrieve details of multiple SIM cards. Supports filtering, sorting, and pagination.
@@ -112,6 +116,7 @@ GET /sim_card
 
 PATCH /sim_card
 ---------------
+
 **Summary:** Update the properties of a group of SIM cards.
 
 - **Description:** This endpoint allows the bulk update of SIM card details. The updates are provided via a CSV file or JSON input.
@@ -133,6 +138,7 @@ PATCH /sim_card
 
 DELETE /sim_card/{i}
 --------------------
+
 **Summary:** Delete an individual SIM card.
 
 - **Description:** This endpoint allows deletion of an individual SIM card.
@@ -146,6 +152,7 @@ DELETE /sim_card/{i}
 - **200**: SIM card deleted successfully.
 
 **Example Response (JSON):**
+
 .. code-block:: json
 
    {
@@ -159,6 +166,7 @@ DELETE /sim_card/{i}
 
 GET /sim_card/{i}
 -----------------
+
 **Summary:** Read the properties of an individual SIM card.
 
 - **Description:** Retrieve details of a specific SIM card.
@@ -172,6 +180,7 @@ GET /sim_card/{i}
 - **200**: SIM card details returned successfully.
 
 **Example Response (JSON):**
+
 .. code-block:: json
 
    {
@@ -187,6 +196,7 @@ GET /sim_card/{i}
 
 PATCH /sim_card/{i}
 -------------------
+
 **Summary:** Update the properties of an individual SIM card.
 
 - **Description:** Modify the details of a specific SIM card.
@@ -196,6 +206,7 @@ PATCH /sim_card/{i}
 - **i**: Identifier of the individual SIM card.
 
 **Request Body (JSON):**
+
 .. code-block:: json
 
    {
@@ -215,6 +226,7 @@ PATCH /sim_card/{i}
 
 POST /sim_card/{i}/allocate
 ---------------------------
+
 **Summary:** Allocate a SIM card to another entity.
 
 - **Description:** Allocate a SIM card to a different entity such as a vehicle, user, or location.
@@ -224,6 +236,7 @@ POST /sim_card/{i}/allocate
 - **i**: Identifier of the individual SIM card.
 
 **Request Body (JSON):**
+
 .. code-block:: json
 
    {
@@ -236,7 +249,8 @@ POST /sim_card/{i}/allocate
 
 POST /sim_card/{i}/enable
 -------------------------
-**Summary:** Enable or disable a SIM card.
+
+**Summary:** Enable or disable the SIM card.
 
 - **Description:** Enable or disable the SIM card.
 
@@ -245,6 +259,7 @@ POST /sim_card/{i}/enable
 - **i**: Identifier of the individual SIM card.
 
 **Request Body (JSON):**
+
 .. code-block:: json
 
    {
@@ -261,6 +276,7 @@ POST /sim_card/{i}/enable
 
 POST /sim_card/{i}/activate
 ---------------------------
+
 **Summary:** Activate a telecommunication service subscription.
 
 - **Description:** Activate a telecommunication service subscription associated with the SIM card.
@@ -270,6 +286,7 @@ POST /sim_card/{i}/activate
 - **i**: Identifier of the individual SIM card.
 
 **Request Body (JSON):**
+
 .. code-block:: json
 
    {

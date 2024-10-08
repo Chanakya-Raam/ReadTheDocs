@@ -20,7 +20,8 @@
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Battery Pack Endpoints" href="battery_pack.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,8 +44,25 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Asset Categories:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="assets_category.html">Assets</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="assets_category.html">Assets</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="battery_pack.html">Battery Pack Endpoints</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">SIM Card Endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#table-of-operations">Table of Operations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#post-sim-card">POST /sim_card</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete-sim-card">DELETE /sim_card</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-sim-card">GET /sim_card</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#patch-sim-card">PATCH /sim_card</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete-sim-card-i">DELETE /sim_card/{i}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-sim-card-i">GET /sim_card/{i}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#patch-sim-card-i">PATCH /sim_card/{i}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#post-sim-card-i-allocate">POST /sim_card/{i}/allocate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#post-sim-card-i-enable">POST /sim_card/{i}/enable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#post-sim-card-i-activate">POST /sim_card/{i}/activate</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -61,6 +79,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="assets_category.html">Assets</a></li>
       <li class="breadcrumb-item active">SIM Card Endpoints</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/sim_card.rst.txt" rel="nofollow"> View page source</a>
@@ -135,20 +154,17 @@
 <li><p><strong>Description:</strong> This endpoint allows for the creation of a new SIM card or bulk creation via file upload.</p></li>
 <li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
 </ul>
-<p><strong>Request Body (JSON Example):</strong>
-.. code-block:: json</p>
-<blockquote>
-<div><dl class="simple">
-<dt>{</dt><dd><p>“asset_tag”: “SIM001”,
-“company”: “Irasus Technologies”,
-“status_label”: “Active”,
-“iccid”: “12345678901234567890”,
-“imsi”: “123456789012345”,
-“msisdn”: “1234567890”</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
+<p><strong>Request Body (JSON Example):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SIM001&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Active&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;iccid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12345678901234567890&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;imsi&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123456789012345&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;msisdn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1234567890&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p><strong>Responses:</strong></p>
 <ul class="simple">
 <li><p><strong>201</strong>: SIM card created successfully.</p></li>
@@ -243,18 +259,15 @@
 <ul class="simple">
 <li><p><strong>200</strong>: SIM card deleted successfully.</p></li>
 </ul>
-<p><strong>Example Response (JSON):</strong>
-.. code-block:: json</p>
-<blockquote>
-<div><dl class="simple">
-<dt>{</dt><dd><p>“status”: “success”,
-“message”: “SIM card deleted successfully”,
-“deletedAt”: “2024-07-30T12:34:56Z”,
-“asset_tag”: “SIM001”</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
+<p><strong>Example Response (JSON):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SIM card deleted successfully&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;deletedAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-07-30T12:34:56Z&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SIM001&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p>—</p>
 </section>
 <section id="get-sim-card-i">
@@ -271,20 +284,17 @@
 <ul class="simple">
 <li><p><strong>200</strong>: SIM card details returned successfully.</p></li>
 </ul>
-<p><strong>Example Response (JSON):</strong>
-.. code-block:: json</p>
-<blockquote>
-<div><dl class="simple">
-<dt>{</dt><dd><p>“asset_tag”: “SIM001”,
-“company”: “Irasus Technologies”,
-“status_label”: “Active”,
-“iccid”: “12345678901234567890”,
-“imsi”: “123456789012345”,
-“msisdn”: “1234567890”</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
+<p><strong>Example Response (JSON):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SIM001&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Active&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;iccid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12345678901234567890&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;imsi&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123456789012345&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;msisdn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1234567890&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p>—</p>
 </section>
 <section id="patch-sim-card-i">
@@ -297,20 +307,17 @@
 <ul class="simple">
 <li><p><strong>i</strong>: Identifier of the individual SIM card.</p></li>
 </ul>
-<p><strong>Request Body (JSON):</strong>
-.. code-block:: json</p>
-<blockquote>
-<div><dl class="simple">
-<dt>{</dt><dd><p>“asset_tag”: “SIM001”,
-“company”: “Irasus Technologies”,
-“status_label”: “Active”,
-“iccid”: “12345678901234567890”,
-“imsi”: “123456789012345”,
-“msisdn”: “1234567890”</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
+<p><strong>Request Body (JSON):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SIM001&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Active&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;iccid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12345678901234567890&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;imsi&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123456789012345&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;msisdn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1234567890&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p><strong>Responses:</strong></p>
 <ul class="simple">
 <li><p><strong>200</strong>: SIM card updated successfully.</p></li>
@@ -327,22 +334,19 @@
 <ul class="simple">
 <li><p><strong>i</strong>: Identifier of the individual SIM card.</p></li>
 </ul>
-<p><strong>Request Body (JSON):</strong>
-.. code-block:: json</p>
-<blockquote>
-<div><dl class="simple">
-<dt>{</dt><dd><p>“target_category”: “Vehicle”,
-“target_individual”: “Vehicle001”,
-“status_label”: “In Use”</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
+<p><strong>Request Body (JSON):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;target_category&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Vehicle&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;target_individual&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Vehicle001&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Use&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p>—</p>
 </section>
 <section id="post-sim-card-i-enable">
 <h2>POST /sim_card/{i}/enable<a class="headerlink" href="#post-sim-card-i-enable" title="Link to this heading"></a></h2>
-<p><strong>Summary:</strong> Enable or disable a SIM card.</p>
+<p><strong>Summary:</strong> Enable or disable the SIM card.</p>
 <ul class="simple">
 <li><p><strong>Description:</strong> Enable or disable the SIM card.</p></li>
 </ul>
@@ -350,17 +354,14 @@
 <ul class="simple">
 <li><p><strong>i</strong>: Identifier of the individual SIM card.</p></li>
 </ul>
-<p><strong>Request Body (JSON):</strong>
-.. code-block:: json</p>
-<blockquote>
-<div><dl class="simple">
-<dt>{</dt><dd><p>“operation_type”: “enable”,
-“operation_specifications”: “active”,
-“status_label”: “In Use”</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
+<p><strong>Request Body (JSON):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;operation_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;enable&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;operation_specifications&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;active&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Use&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p><strong>Responses:</strong></p>
 <ul class="simple">
 <li><p><strong>200</strong>: SIM card enabled or disabled successfully.</p></li>
@@ -377,17 +378,14 @@
 <ul class="simple">
 <li><p><strong>i</strong>: Identifier of the individual SIM card.</p></li>
 </ul>
-<p><strong>Request Body (JSON):</strong>
-.. code-block:: json</p>
-<blockquote>
-<div><dl class="simple">
-<dt>{</dt><dd><p>“operation_type”: “activate”,
-“service_provider”: “Telco Provider”,
-“plan”: “Unlimited Data”</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
+<p><strong>Request Body (JSON):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;operation_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;activate&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;service_provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Telco Provider&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;plan&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Unlimited Data&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p><strong>Responses:</strong></p>
 <ul class="simple">
 <li><p><strong>200</strong>: SIM card activated successfully.</p></li>
@@ -398,7 +396,9 @@
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="battery_pack.html" class="btn btn-neutral float-left" title="Battery Pack Endpoints" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 
