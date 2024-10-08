@@ -6,6 +6,9 @@ This section covers all operations available for Battery Packs, including creati
 Table of Operations
 ===================
 
+Table of Operations
+===================
+
 +-------------------+--------------------------------------------------+------------------------------------+
 | **Method**        | **Description**                                  | **Endpoint**                       |
 +===================+==================================================+====================================+
