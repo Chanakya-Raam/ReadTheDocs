@@ -14,3 +14,5 @@ This section contains all asset-related categories and their respective operatio
    energy_meter_category
    geofence_category
    swapping_station_category
+   charger_advanced_category
+   charger_basic_category
