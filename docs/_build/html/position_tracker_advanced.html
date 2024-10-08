@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Position Tracker (Basic) Endpoints &mdash; FastApi Documentation  documentation</title>
+  <title>Position Tracker (Advanced) Endpoints &mdash; FastApi Documentation  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -21,8 +21,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Position Tracker Advanced Category" href="position_tracker_advanced_category.html" />
-    <link rel="prev" title="Position Tracker Basic Category" href="position_tracker_basic_category.html" /> 
+    <link rel="prev" title="Position Tracker Advanced Category" href="position_tracker_advanced_category.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -49,21 +48,22 @@
 <li class="toctree-l1 current"><a class="reference internal" href="assets_category.html">Assets</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="battery_pack_category.html">Battery Pack Category</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sim_card_category.html">Sim Cards Category</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="position_tracker_basic_category.html">Position Tracker Basic Category</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Position Tracker (Basic) Endpoints</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#post-position-tracker-basic">POST /position_tracker_basic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#delete-position-tracker-basic">DELETE /position_tracker_basic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#get-position-tracker-basic">GET /position_tracker_basic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#patch-position-tracker-basic">PATCH /position_tracker_basic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#delete-position-tracker-basic-i">DELETE /position_tracker_basic/{i}</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#get-position-tracker-basic-i">GET /position_tracker_basic/{i}</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#post-position-tracker-basic-i-allocate">POST /position_tracker_basic/{i}/allocate</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#post-position-tracker-basic-i-enable">POST /position_tracker_basic/{i}/enable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="position_tracker_basic_category.html">Position Tracker Basic Category</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="position_tracker_advanced_category.html">Position Tracker Advanced Category</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Position Tracker (Advanced) Endpoints</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#post-position-tracker-advanced">POST /position_tracker_advanced</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete-position-tracker-advanced">DELETE /position_tracker_advanced</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-position-tracker-advanced">GET /position_tracker_advanced</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#patch-position-tracker-advanced">PATCH /position_tracker_advanced</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete-position-tracker-advanced-i">DELETE /position_tracker_advanced/{i}</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-position-tracker-advanced-i">GET /position_tracker_advanced/{i}</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#patch-position-tracker-advanced-i">PATCH /position_tracker_advanced/{i}</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#post-position-tracker-advanced-i-allocate">POST /position_tracker_advanced/{i}/allocate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#post-position-tracker-advanced-i-enable">POST /position_tracker_advanced/{i}/enable</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="position_tracker_advanced_category.html">Position Tracker Advanced Category</a></li>
 </ul>
 </li>
 </ul>
@@ -83,10 +83,10 @@
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="assets_category.html">Assets</a></li>
-          <li class="breadcrumb-item"><a href="position_tracker_basic_category.html">Position Tracker Basic Category</a></li>
-      <li class="breadcrumb-item active">Position Tracker (Basic) Endpoints</li>
+          <li class="breadcrumb-item"><a href="position_tracker_advanced_category.html">Position Tracker Advanced Category</a></li>
+      <li class="breadcrumb-item active">Position Tracker (Advanced) Endpoints</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/position_tracker_basic.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/position_tracker_advanced.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -94,9 +94,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="position-tracker-basic-endpoints">
-<h1>Position Tracker (Basic) Endpoints<a class="headerlink" href="#position-tracker-basic-endpoints" title="Link to this heading"></a></h1>
-<p>This section covers all operations available for Position Trackers (Basic), including creating, reading, updating, deleting, and allocating individual or multiple position trackers.</p>
+  <section id="position-tracker-advanced-endpoints">
+<h1>Position Tracker (Advanced) Endpoints<a class="headerlink" href="#position-tracker-advanced-endpoints" title="Link to this heading"></a></h1>
+<p>This section covers all operations available for Position Trackers (Advanced), including creating, reading, updating, deleting, and allocating individual or multiple advanced position trackers.</p>
 <p><strong>Table of Operations</strong></p>
 <table class="docutils align-default">
 <thead>
@@ -107,59 +107,64 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>POST</p></td>
-<td><p>Create a new position tracker (basic) or bulk upload</p></td>
-<td><p>/position_tracker_basic</p></td>
+<td><p>Create a new position tracker (advanced) or bulk upload</p></td>
+<td><p>/position_tracker_advanced</p></td>
 </tr>
 <tr class="row-odd"><td><p>DELETE</p></td>
-<td><p>Delete a group of position trackers (basic)</p></td>
-<td><p>/position_tracker_basic</p></td>
+<td><p>Delete a group of position trackers (advanced)</p></td>
+<td><p>/position_tracker_advanced</p></td>
 </tr>
 <tr class="row-even"><td><p>GET</p></td>
-<td><p>Read the properties of a group of trackers (basic)</p></td>
-<td><p>/position_tracker_basic</p></td>
+<td><p>Read the properties of a group of trackers (advanced)</p></td>
+<td><p>/position_tracker_advanced</p></td>
 </tr>
 <tr class="row-odd"><td><p>PATCH</p></td>
-<td><p>Update a group of trackers (basic)</p></td>
-<td><p>/position_tracker_basic</p></td>
+<td><p>Update the properties of a group of trackers (advanced)</p></td>
+<td><p>/position_tracker_advanced</p></td>
 </tr>
 <tr class="row-even"><td><p>DELETE</p></td>
-<td><p>Delete an individual tracker (basic)</p></td>
-<td><p>/position_tracker_basic/{i}</p></td>
+<td><p>Delete an individual tracker (advanced)</p></td>
+<td><p>/position_tracker_advanced/{i}</p></td>
 </tr>
 <tr class="row-odd"><td><p>GET</p></td>
-<td><p>Read an individual tracker (basic)</p></td>
-<td><p>/position_tracker_basic/{i}</p></td>
+<td><p>Read the properties of an individual tracker (advanced)</p></td>
+<td><p>/position_tracker_advanced/{i}</p></td>
 </tr>
 <tr class="row-even"><td><p>PATCH</p></td>
-<td><p>Update an individual tracker (basic)</p></td>
-<td><p>/position_tracker_basic/{i}</p></td>
+<td><p>Update the properties of an individual tracker (advanced)</p></td>
+<td><p>/position_tracker_advanced/{i}</p></td>
 </tr>
 <tr class="row-odd"><td><p>POST</p></td>
-<td><p>Allocate a tracker (basic) to an entity</p></td>
-<td><p>/position_tracker_basic/{i}/allocate</p></td>
+<td><p>Allocate a tracker (advanced) to an entity</p></td>
+<td><p>/position_tracker_advanced/{i}/allocate</p></td>
 </tr>
 <tr class="row-even"><td><p>POST</p></td>
-<td><p>Enable or disable a tracker (basic)</p></td>
-<td><p>/position_tracker_basic/{i}/enable</p></td>
+<td><p>Enable or disable a tracker (advanced)</p></td>
+<td><p>/position_tracker_advanced/{i}/enable</p></td>
 </tr>
 </tbody>
 </table>
 <p>—</p>
-<section id="post-position-tracker-basic">
-<h2>POST /position_tracker_basic<a class="headerlink" href="#post-position-tracker-basic" title="Link to this heading"></a></h2>
-<p><strong>Summary:</strong> Create a new position tracker (basic).</p>
+<section id="post-position-tracker-advanced">
+<h2>POST /position_tracker_advanced<a class="headerlink" href="#post-position-tracker-advanced" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Create a new position tracker (advanced).</p>
 <ul class="simple">
-<li><p><strong>Description:</strong> This endpoint allows for the creation of a new position tracker (basic) or bulk creation via file upload.</p></li>
+<li><p><strong>Description:</strong> This endpoint allows for the creation of a new position tracker (advanced) or bulk creation via file upload.</p></li>
 <li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
 </ul>
 <p><strong>Request Body (JSON Example):</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TRACKER01&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Active&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Basic Tracker Model&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRASUS01&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Warehouse&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Model X&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;manufacturer_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Delhi&quot;</span>
+<span class="w">  </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Delhi&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;warranty_months&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;position_tracker_advanced&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;imei&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;position_tracker_hardware_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -215,11 +220,11 @@
 </ul>
 <p>—</p>
 </section>
-<section id="delete-position-tracker-basic">
-<h2>DELETE /position_tracker_basic<a class="headerlink" href="#delete-position-tracker-basic" title="Link to this heading"></a></h2>
-<p><strong>Summary:</strong> Delete a group of position trackers (basic).</p>
+<section id="delete-position-tracker-advanced">
+<h2>DELETE /position_tracker_advanced<a class="headerlink" href="#delete-position-tracker-advanced" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Delete a group of position trackers (advanced).</p>
 <ul class="simple">
-<li><p><strong>Description:</strong> This endpoint allows the deletion of a group of position trackers (basic). Requires JWT authorization.</p></li>
+<li><p><strong>Description:</strong> This endpoint allows the deletion of a group of position trackers (advanced). Requires JWT authentication.</p></li>
 </ul>
 <p><strong>Responses:</strong></p>
 <ul>
@@ -259,11 +264,11 @@
 </ul>
 <p>—</p>
 </section>
-<section id="get-position-tracker-basic">
-<h2>GET /position_tracker_basic<a class="headerlink" href="#get-position-tracker-basic" title="Link to this heading"></a></h2>
-<p><strong>Summary:</strong> Read the properties of a group of position trackers (basic).</p>
+<section id="get-position-tracker-advanced">
+<h2>GET /position_tracker_advanced<a class="headerlink" href="#get-position-tracker-advanced" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Read the properties of a group of position trackers (advanced).</p>
 <ul class="simple">
-<li><p><strong>Description:</strong> Retrieve details of multiple position trackers (basic). Supports filtering, sorting, and pagination.</p></li>
+<li><p><strong>Description:</strong> Retrieve details of multiple position trackers (advanced). Supports filtering, sorting, and pagination.</p></li>
 </ul>
 <p><strong>Query Parameters:</strong></p>
 <ul class="simple">
@@ -274,6 +279,7 @@
 <li><p><strong>order</strong>: Sort order, either <cite>asc</cite> or <cite>desc</cite>.</p></li>
 <li><p><strong>model_name</strong>: Filter by model name.</p></li>
 <li><p><strong>manufacturer_name</strong>: Filter by manufacturer name.</p></li>
+<li><p><strong>owner_name</strong>: Filter by owner name.</p></li>
 <li><p><strong>location</strong>: Filter by location.</p></li>
 <li><p><strong>status_label</strong>: Filter by status label.</p></li>
 </ul>
@@ -282,10 +288,10 @@
 <li><p><strong>200</strong>: Successfully retrieved position trackers.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
 <span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TRACKER01&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRASUS01&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Active&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Basic Tracker Model&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Warehouse&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Model X&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;manufacturer_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Delhi&quot;</span>
 <span class="w">  </span><span class="p">}</span>
@@ -296,11 +302,11 @@
 </ul>
 <p>—</p>
 </section>
-<section id="patch-position-tracker-basic">
-<h2>PATCH /position_tracker_basic<a class="headerlink" href="#patch-position-tracker-basic" title="Link to this heading"></a></h2>
-<p><strong>Summary:</strong> Update the properties of a group of position trackers (basic).</p>
+<section id="patch-position-tracker-advanced">
+<h2>PATCH /position_tracker_advanced<a class="headerlink" href="#patch-position-tracker-advanced" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Update the properties of a group of position trackers (advanced).</p>
 <ul class="simple">
-<li><p><strong>Description:</strong> This endpoint allows the bulk update of position tracker (basic) details.</p></li>
+<li><p><strong>Description:</strong> This endpoint allows the bulk update of position tracker (advanced) details.</p></li>
 <li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
 </ul>
 <p><strong>Responses:</strong></p>
@@ -332,11 +338,11 @@
 </ul>
 <p>—</p>
 </section>
-<section id="delete-position-tracker-basic-i">
-<h2>DELETE /position_tracker_basic/{i}<a class="headerlink" href="#delete-position-tracker-basic-i" title="Link to this heading"></a></h2>
-<p><strong>Summary:</strong> Delete an individual position tracker (basic).</p>
+<section id="delete-position-tracker-advanced-i">
+<h2>DELETE /position_tracker_advanced/{i}<a class="headerlink" href="#delete-position-tracker-advanced-i" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Delete an individual position tracker (advanced).</p>
 <ul class="simple">
-<li><p><strong>Description:</strong> This endpoint allows deletion of an individual position tracker (basic).</p></li>
+<li><p><strong>Description:</strong> This endpoint allows deletion of an individual position tracker (advanced).</p></li>
 </ul>
 <p><strong>Path Parameters:</strong></p>
 <ul class="simple">
@@ -349,7 +355,7 @@
 <span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Asset deleted successfully&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;deletedAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-07-30T12:34:56Z&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TRACKER01&quot;</span>
+<span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRASUS01&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -357,11 +363,11 @@
 </ul>
 <p>—</p>
 </section>
-<section id="get-position-tracker-basic-i">
-<h2>GET /position_tracker_basic/{i}<a class="headerlink" href="#get-position-tracker-basic-i" title="Link to this heading"></a></h2>
-<p><strong>Summary:</strong> Read the properties of an individual position tracker (basic).</p>
+<section id="get-position-tracker-advanced-i">
+<h2>GET /position_tracker_advanced/{i}<a class="headerlink" href="#get-position-tracker-advanced-i" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Read the properties of an individual position tracker (advanced).</p>
 <ul class="simple">
-<li><p><strong>Description:</strong> Retrieve details of a specific position tracker (basic).</p></li>
+<li><p><strong>Description:</strong> Retrieve details of a specific position tracker (advanced).</p></li>
 </ul>
 <p><strong>Path Parameters:</strong></p>
 <ul class="simple">
@@ -371,10 +377,10 @@
 <ul>
 <li><p><strong>200</strong>: Position tracker details returned successfully.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TRACKER01&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRASUS01&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Active&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Basic Tracker Model&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Warehouse&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Model X&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;manufacturer_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Delhi&quot;</span>
 <span class="p">}</span>
@@ -384,11 +390,39 @@
 </ul>
 <p>—</p>
 </section>
-<section id="post-position-tracker-basic-i-allocate">
-<h2>POST /position_tracker_basic/{i}/allocate<a class="headerlink" href="#post-position-tracker-basic-i-allocate" title="Link to this heading"></a></h2>
-<p><strong>Summary:</strong> Allocate a position tracker (basic) to another entity.</p>
+<section id="patch-position-tracker-advanced-i">
+<h2>PATCH /position_tracker_advanced/{i}<a class="headerlink" href="#patch-position-tracker-advanced-i" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Update the properties of an individual position tracker (advanced).</p>
 <ul class="simple">
-<li><p><strong>Description:</strong> Allocate a position tracker (basic) to a different entity such as a vehicle, user, or location.</p></li>
+<li><p><strong>Description:</strong> Modify the details of a specific position tracker (advanced).</p></li>
+</ul>
+<p><strong>Path Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>i</strong>: Identifier of the individual position tracker.</p></li>
+</ul>
+<p><strong>Request Body (JSON Example):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRASUS01&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Warehouse&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Model X&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;manufacturer_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Delhi&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;warranty_months&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;position_tracker_advanced&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;imei&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;position_tracker_hardware_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>—</p>
+</section>
+<section id="post-position-tracker-advanced-i-allocate">
+<h2>POST /position_tracker_advanced/{i}/allocate<a class="headerlink" href="#post-position-tracker-advanced-i-allocate" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Allocate a position tracker (advanced) to another entity.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> Allocate a position tracker (advanced) to a different entity such as a vehicle, user, or location.</p></li>
 </ul>
 <p><strong>Path Parameters:</strong></p>
 <ul class="simple">
@@ -397,18 +431,18 @@
 <p><strong>Request Body (JSON Example):</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;target_category&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Vehicle&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;target_individual&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Vehicle001&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;target_individual&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRASUS01&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Use&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>—</p>
 </section>
-<section id="post-position-tracker-basic-i-enable">
-<h2>POST /position_tracker_basic/{i}/enable<a class="headerlink" href="#post-position-tracker-basic-i-enable" title="Link to this heading"></a></h2>
-<p><strong>Summary:</strong> Enable or disable the position tracker (basic).</p>
+<section id="post-position-tracker-advanced-i-enable">
+<h2>POST /position_tracker_advanced/{i}/enable<a class="headerlink" href="#post-position-tracker-advanced-i-enable" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Enable or disable the position tracker (advanced).</p>
 <ul class="simple">
-<li><p><strong>Description:</strong> Enable or disable the position tracker (basic).</p></li>
+<li><p><strong>Description:</strong> Enable or disable the position tracker (advanced).</p></li>
 </ul>
 <p><strong>Path Parameters:</strong></p>
 <ul class="simple">
@@ -417,8 +451,8 @@
 <p><strong>Request Body (JSON Example):</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;operation_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;enable&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;operation_specifications&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;active&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Use&quot;</span>
+<span class="w">  </span><span class="nt">&quot;operation_specifications&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tracking&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Warehouse&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -441,8 +475,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="position_tracker_basic_category.html" class="btn btn-neutral float-left" title="Position Tracker Basic Category" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="position_tracker_advanced_category.html" class="btn btn-neutral float-right" title="Position Tracker Advanced Category" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="position_tracker_advanced_category.html" class="btn btn-neutral float-left" title="Position Tracker Advanced Category" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

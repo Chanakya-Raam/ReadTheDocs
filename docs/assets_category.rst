@@ -9,3 +9,4 @@ This section contains all asset-related categories and their respective operatio
    battery_pack_category
    sim_card_category
    position_tracker_basic_category
+   position_tracker_advanced_category
