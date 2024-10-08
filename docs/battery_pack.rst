@@ -3,6 +3,8 @@ Battery Pack Endpoints
 
 This section covers all operations available for Battery Packs, including creating, reading, updating, deleting, and allocating individual or multiple battery packs.
 
+---
+
 POST `/battery_pack`
 --------------------
 
@@ -43,6 +45,7 @@ POST `/battery_pack`
 - **409**: Resource already exists.
 - **500**: Internal server error.
 
+---
 
 DELETE `/battery_pack`
 ----------------------
