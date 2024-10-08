@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geofence Endpoints &mdash; FastApi Documentation  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Battery Pack Swapping Station Category" href="swapping_station_category.html" />
+    <link rel="prev" title="Geofence Category" href="geofence_category.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            FastApi Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Asset Categories:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="assets_category.html">Assets</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="battery_pack_category.html">Battery Pack Category</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sim_card_category.html">Sim Cards Category</a></li>
+<li class="toctree-l2"><a class="reference internal" href="position_tracker_basic_category.html">Position Tracker Basic Category</a></li>
+<li class="toctree-l2"><a class="reference internal" href="position_tracker_advanced_category.html">Position Tracker Advanced Category</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vehicle_control_unit_category.html">Vehicle Control Unit Category</a></li>
+<li class="toctree-l2"><a class="reference internal" href="energy_meter_category.html">Energy Meter Category</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="geofence_category.html">Geofence Category</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Geofence Endpoints</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#post-geofence">POST /geofence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete-geofence">DELETE /geofence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-geofence">GET /geofence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#patch-geofence">PATCH /geofence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete-geofence-i">DELETE /geofence/{i}</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-geofence-i">GET /geofence/{i}</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#patch-geofence-i">PATCH /geofence/{i}</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#post-geofence-i-allocate">POST /geofence/{i}/allocate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-geofence-i-vehicles">GET /geofence/{i}/vehicles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="swapping_station_category.html">Battery Pack Swapping Station Category</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FastApi Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="assets_category.html">Assets</a></li>
+          <li class="breadcrumb-item"><a href="geofence_category.html">Geofence Category</a></li>
+      <li class="breadcrumb-item active">Geofence Endpoints</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/geofence.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="geofence-endpoints">
+<h1>Geofence Endpoints<a class="headerlink" href="#geofence-endpoints" title="Link to this heading"></a></h1>
+<p>This section covers all operations available for Geofences, including creating, reading, updating, deleting, allocating, and listing vehicles within geofences.</p>
+<p><strong>Table of Operations</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Method</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+<th class="head"><p><strong>Endpoint</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>POST</p></td>
+<td><p>Create a new geofence</p></td>
+<td><p>/geofence</p></td>
+</tr>
+<tr class="row-odd"><td><p>DELETE</p></td>
+<td><p>Delete a set of geofences</p></td>
+<td><p>/geofence</p></td>
+</tr>
+<tr class="row-even"><td><p>GET</p></td>
+<td><p>Read the properties of a set of geofences</p></td>
+<td><p>/geofence</p></td>
+</tr>
+<tr class="row-odd"><td><p>PATCH</p></td>
+<td><p>Update the properties of a set of geofences</p></td>
+<td><p>/geofence</p></td>
+</tr>
+<tr class="row-even"><td><p>DELETE</p></td>
+<td><p>Delete an individual geofence</p></td>
+<td><p>/geofence/{i}</p></td>
+</tr>
+<tr class="row-odd"><td><p>GET</p></td>
+<td><p>Read the properties of an individual geofence</p></td>
+<td><p>/geofence/{i}</p></td>
+</tr>
+<tr class="row-even"><td><p>PATCH</p></td>
+<td><p>Update the properties of an individual geofence</p></td>
+<td><p>/geofence/{i}</p></td>
+</tr>
+<tr class="row-odd"><td><p>POST</p></td>
+<td><p>Assign a vehicle to a specific geofence</p></td>
+<td><p>/geofence/{i}/allocate</p></td>
+</tr>
+<tr class="row-even"><td><p>GET</p></td>
+<td><p>List all vehicles for a geofence</p></td>
+<td><p>/geofence/{i}/vehicles</p></td>
+</tr>
+</tbody>
+</table>
+<p>—</p>
+<section id="post-geofence">
+<h2>POST /geofence<a class="headerlink" href="#post-geofence" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Create a new geofence.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> This endpoint allows for the creation of a new geofence.</p></li>
+<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
+</ul>
+<p><strong>Request Body (JSON Example):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Connaught Place in Delhi, DL, India&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;area&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;circle&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;center&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">28.6328035</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;lng&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">77.2196819</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;center&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">28.6328035</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;lng&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">77.2196819</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">333</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Responses:</strong></p>
+<ul>
+<li><p><strong>201</strong>: Geofence created successfully.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Geofence created successfully&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;createdAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-09-04 00:00:00+05:30&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>400</strong>: Invalid request parameters.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invalid request parameters&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>401</strong>: Unauthorized access.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Unauthorized access&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>403</strong>: Access forbidden.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Access forbidden&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>500</strong>: Internal server error.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Request timed out&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>—</p>
+</section>
+<section id="delete-geofence">
+<h2>DELETE /geofence<a class="headerlink" href="#delete-geofence" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Delete a set of geofences.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> This endpoint allows the deletion of a set of geofences. Requires JWT authentication.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul>
+<li><p><strong>200</strong>: Geofences deleted successfully.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Geofences deleted successfully&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;deletedAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-07-30T12:34:56Z&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>400</strong>: Invalid request parameters.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invalid request parameters&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>401</strong>: Unauthorized access.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Unauthorized access&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>500</strong>: Internal server error.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Request timed out&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>—</p>
+</section>
+<section id="get-geofence">
+<h2>GET /geofence<a class="headerlink" href="#get-geofence" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Read the properties of a set of geofences.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> Retrieve details of multiple geofences.</p></li>
+<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
+</ul>
+<p><strong>Query Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>geofence</strong>: Search term related to the geofence.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul>
+<li><p><strong>200</strong>: Successfully retrieved geofences.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Connaught Place in Delhi, DL, India&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;area&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;circle&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;center&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">28.6328035</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;lng&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">77.2196819</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;center&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">28.6328035</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;lng&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">77.2196819</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">333</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;createdAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-09-04 00:00:00+05:30&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;updatedAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-09-04 00:00:00+05:30&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>—</p>
+</section>
+<section id="patch-geofence">
+<h2>PATCH /geofence<a class="headerlink" href="#patch-geofence" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Update the properties of a set of geofences.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> This endpoint allows the bulk update of geofence details.</p></li>
+<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul>
+<li><p><strong>200</strong>: Geofences updated successfully.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Geofences updated successfully&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;updatedAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-07-30T12:34:56Z&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>400</strong>: Invalid request parameters.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invalid request parameters&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>401</strong>: Unauthorized access.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Unauthorized access&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>—</p>
+</section>
+<section id="delete-geofence-i">
+<h2>DELETE /geofence/{i}<a class="headerlink" href="#delete-geofence-i" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Delete an individual geofence.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> This endpoint allows the deletion of an individual geofence.</p></li>
+</ul>
+<p><strong>Path Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>i</strong>: Identifier of the individual geofence.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul>
+<li><p><strong>200</strong>: Geofence deleted successfully.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Geofence deleted successfully&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;deletedAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-07-30T12:34:56Z&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>—</p>
+</section>
+<section id="get-geofence-i">
+<h2>GET /geofence/{i}<a class="headerlink" href="#get-geofence-i" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Read the properties of an individual geofence.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> Retrieve details of a specific geofence.</p></li>
+</ul>
+<p><strong>Path Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>i</strong>: Identifier of the individual geofence.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul>
+<li><p><strong>200</strong>: Geofence details returned successfully.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Connaught Place in Delhi, DL, India&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;area&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;circle&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;center&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">28.6328035</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;lng&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">77.2196819</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;center&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">28.6328035</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;lng&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">77.2196819</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">333</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;createdAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-09-04 00:00:00+05:30&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;updatedAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-09-04 00:00:00+05:30&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>—</p>
+</section>
+<section id="patch-geofence-i">
+<h2>PATCH /geofence/{i}<a class="headerlink" href="#patch-geofence-i" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Update the properties of an individual geofence.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> Modify the details of a specific geofence.</p></li>
+</ul>
+<p><strong>Path Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>i</strong>: Identifier of the individual geofence.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul>
+<li><p><strong>200</strong>: Geofence updated successfully.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Geofence updated successfully&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;updatedAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-07-30T12:34:56Z&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>—</p>
+</section>
+<section id="post-geofence-i-allocate">
+<h2>POST /geofence/{i}/allocate<a class="headerlink" href="#post-geofence-i-allocate" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Assign a vehicle to a specific geofence.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> This endpoint assigns a vehicle to a specific geofence.</p></li>
+</ul>
+<p><strong>Path Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>i</strong>: Identifier of the individual geofence.</p></li>
+</ul>
+<p><strong>Request Body (JSON Example):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Connaught Place in Delhi, DL, India&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;area&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;circle&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;center&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">28.6328035</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;lng&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">77.2196819</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;center&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">28.6328035</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;lng&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">77.2196819</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">333</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Responses:</strong></p>
+<ul>
+<li><p><strong>201</strong>: Vehicle assigned to geofence successfully.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Geofence allocated successfully&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;updatedAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-09-04 00:00:00+05:30&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>—</p>
+</section>
+<section id="get-geofence-i-vehicles">
+<h2>GET /geofence/{i}/vehicles<a class="headerlink" href="#get-geofence-i-vehicles" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> List all vehicles assigned to a geofence.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> Retrieve all vehicles allocated to a specific geofence.</p></li>
+</ul>
+<p><strong>Path Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>i</strong>: Identifier of the individual geofence.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul>
+<li><p><strong>200</strong>: Successfully retrieved vehicles.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;vehicles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRASUS01&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>—</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="geofence_category.html" class="btn btn-neutral float-left" title="Geofence Category" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="swapping_station_category.html" class="btn btn-neutral float-right" title="Battery Pack Swapping Station Category" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Chanakya Terala.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
