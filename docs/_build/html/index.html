@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Battery Pack Endpoints &mdash; FastApi Documentation  documentation</title>
+  <title>Irasus API Documentation &mdash; FastApi Documentation  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -20,7 +20,8 @@
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Assets" href="assets_category.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -42,23 +43,11 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Battery Pack Endpoints</a><ul>
-<li><a class="reference internal" href="#table-of-operations">Table of Operations</a></li>
-<li><a class="reference internal" href="#post-battery-pack">POST <cite>/battery_pack</cite></a></li>
-<li><a class="reference internal" href="#delete-battery-pack">DELETE <cite>/battery_pack</cite></a></li>
-<li><a class="reference internal" href="#get-battery-pack">GET <cite>/battery_pack</cite></a></li>
-<li><a class="reference internal" href="#patch-battery-pack">PATCH <cite>/battery_pack</cite></a></li>
-<li><a class="reference internal" href="#delete-battery-pack-i">DELETE <cite>/battery_pack/{i}</cite></a></li>
-<li><a class="reference internal" href="#get-battery-pack-i">GET <cite>/battery_pack/{i}</cite></a></li>
-<li><a class="reference internal" href="#patch-battery-pack-i">PATCH <cite>/battery_pack/{i}</cite></a></li>
-<li><a class="reference internal" href="#post-battery-pack-i-allocate">POST <cite>/battery_pack/{i}/allocate</cite></a></li>
-<li><a class="reference internal" href="#post-battery-pack-i-enable">POST <cite>/battery_pack/{i}/enable</cite></a></li>
+              <p class="caption" role="heading"><span class="caption-text">Asset Categories:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="assets_category.html">Assets</a></li>
 </ul>
-</li>
-</ul>
-</div>
+
         </div>
       </div>
     </nav>
@@ -73,7 +62,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Battery Pack Endpoints</li>
+      <li class="breadcrumb-item active">Irasus API Documentation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -83,336 +72,43 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="battery-pack-endpoints">
-<h1>Battery Pack Endpoints<a class="headerlink" href="#battery-pack-endpoints" title="Link to this heading"></a></h1>
-<p>This section covers all operations available for Battery Packs, including creating, reading, updating, deleting, and allocating individual or multiple battery packs.</p>
-<section id="table-of-operations">
-<h2>Table of Operations<a class="headerlink" href="#table-of-operations" title="Link to this heading"></a></h2>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 25.0%" />
-<col style="width: 25.0%" />
-<col style="width: 50.0%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p><strong>Method</strong></p></th>
-<th class="head"><p><strong>Operation</strong></p></th>
-<th class="head"><p><strong>Description</strong></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>POST</p></td>
-<td><p>/battery_pack</p></td>
-<td><p>Create a new battery pack or upload in bulk</p></td>
-</tr>
-<tr class="row-odd"><td><p>DELETE</p></td>
-<td><p>/battery_pack</p></td>
-<td><p>Delete a group of battery packs</p></td>
-</tr>
-<tr class="row-even"><td><p>GET</p></td>
-<td><p>/battery_pack</p></td>
-<td><p>Read the properties of a group of battery packs</p></td>
-</tr>
-<tr class="row-odd"><td><p>PATCH</p></td>
-<td><p>/battery_pack</p></td>
-<td><p>Update the properties of a group of battery packs</p></td>
-</tr>
-<tr class="row-even"><td><p>DELETE</p></td>
-<td><p>/battery_pack/{i}</p></td>
-<td><p>Delete an individual battery pack</p></td>
-</tr>
-<tr class="row-odd"><td><p>GET</p></td>
-<td><p>/battery_pack/{i}</p></td>
-<td><p>Read the properties of an individual battery pack</p></td>
-</tr>
-<tr class="row-even"><td><p>PATCH</p></td>
-<td><p>/battery_pack/{i}</p></td>
-<td><p>Update the properties of an individual battery pack</p></td>
-</tr>
-<tr class="row-odd"><td><p>POST</p></td>
-<td><p>/battery_pack/{i}/allocate</p></td>
-<td><p>Allocate a battery pack to another entity</p></td>
-</tr>
-<tr class="row-even"><td><p>POST</p></td>
-<td><p>/battery_pack/{i}/enable</p></td>
-<td><p>Enable or disable a battery pack</p></td>
-</tr>
-</tbody>
-</table>
-<p>—</p>
+  <section id="irasus-api-documentation">
+<h1>Irasus API Documentation<a class="headerlink" href="#irasus-api-documentation" title="Link to this heading"></a></h1>
+<p>Welcome to the <strong>Irasus REST API Documentation</strong>. This document outlines all available categories of operations in the <strong>Irasus Battery Management System</strong>, allowing users to manage assets like Battery Packs, Vehicles, SIM Cards, and more. The API is designed to offer a unified solution for monitoring, controlling, and managing these assets from anywhere in the world.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>The Irasus API provides endpoints that help manage battery packs and other related assets efficiently. Whether you’re building applications for electric vehicle fleet management, battery health monitoring, or location tracking, this API enables seamless integration with your systems.</p>
 </section>
-<section id="post-battery-pack">
-<h2>POST <cite>/battery_pack</cite><a class="headerlink" href="#post-battery-pack" title="Link to this heading"></a></h2>
-<p><strong>Summary:</strong> Create a new battery pack.</p>
+<section id="key-features">
+<h2>Key Features<a class="headerlink" href="#key-features" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p><strong>Description:</strong> This endpoint allows for the creation of a new battery pack or bulk creation via file upload.</p></li>
-<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
+<li><p><strong>Battery Pack Management</strong>: Create, read, update, delete, allocate, and enable/disable battery packs.</p></li>
+<li><p><strong>Vehicle Control</strong>: Manage vehicle assets linked to battery packs.</p></li>
+<li><p><strong>SIM Card Operations</strong>: Manage SIM cards used in battery tracking and communication.</p></li>
+<li><p><strong>Swapping Stations</strong>: Manage battery pack swapping stations, including operations and status checks.</p></li>
+<li><p><strong>Charger Operations</strong>: Monitor and manage charger assets (both advanced and basic models).</p></li>
+<li><p><strong>Geofencing &amp; Location</strong>: Track and update location-based data, including geofences.</p></li>
+<li><p><strong>User Management</strong>: Assign assets to users and manage user-specific operations.</p></li>
 </ul>
-<p><strong>Request Body (JSON Example):</strong></p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRASUS01&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Warehouse&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Model X&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;manufacturer_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Delhi&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;warranty_months&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;battery_pack&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;battery_cell_chemistry&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Li-NMC&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;battery_pack_nominal_voltage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;48 V&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;battery_pack_nominal_charge_capacity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;48 Ah&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;bms_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Firmware&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;battery_cell_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cylindrical&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;battery_pack_casing&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Plastic&quot;</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
+</section>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
+<p>All API operations require authentication via JSON Web Tokens (JWT). Ensure that the token is passed in the <cite>Authorization</cite> header in the following format:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Authorization:<span class="w"> </span>Bearer<span class="w"> </span>&lt;JWT&gt;
 </pre></div>
 </div>
-<p><strong>Responses:</strong></p>
-<ul class="simple">
-<li><p><strong>201</strong>: Battery pack created successfully.</p></li>
-<li><p><strong>400</strong>: Invalid request parameters.</p></li>
-<li><p><strong>401</strong>: Unauthorized access.</p></li>
-<li><p><strong>403</strong>: Access forbidden.</p></li>
-<li><p><strong>404</strong>: Resource not found.</p></li>
-<li><p><strong>409</strong>: Resource already exists.</p></li>
-<li><p><strong>500</strong>: Internal server error.</p></li>
-</ul>
-<p>—</p>
 </section>
-<section id="delete-battery-pack">
-<h2>DELETE <cite>/battery_pack</cite><a class="headerlink" href="#delete-battery-pack" title="Link to this heading"></a></h2>
-<p><strong>Summary:</strong> Delete a group of battery packs.</p>
-<ul class="simple">
-<li><p><strong>Description:</strong> This endpoint allows the deletion of a group of battery packs. Requires JWT authorization.</p></li>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Asset Categories:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="assets_category.html">Assets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="battery_pack.html">Battery Pack Endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="battery_pack.html#table-of-operations">Table of Operations</a></li>
 </ul>
-<p><strong>Responses:</strong></p>
-<ul class="simple">
-<li><p><strong>200</strong>: Successfully deleted.</p></li>
-<li><p><strong>400</strong>: Invalid request parameters.</p></li>
-<li><p><strong>401</strong>: Unauthorized access.</p></li>
-<li><p><strong>403</strong>: Access forbidden.</p></li>
-<li><p><strong>404</strong>: Resource not found.</p></li>
-<li><p><strong>500</strong>: Internal server error.</p></li>
+</li>
 </ul>
-<p><strong>Example Request:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span><span class="s2">&quot;https://example.com/api/battery_pack&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;JWT&gt;&quot;</span>
-</pre></div>
-</div>
-<p>—</p>
-</section>
-<section id="get-battery-pack">
-<h2>GET <cite>/battery_pack</cite><a class="headerlink" href="#get-battery-pack" title="Link to this heading"></a></h2>
-<p><strong>Summary:</strong> Read the properties of a group of battery packs.</p>
-<ul class="simple">
-<li><p><strong>Description:</strong> Retrieve details of multiple battery packs. Supports filtering, sorting, and pagination.</p></li>
-</ul>
-<p><strong>Query Parameters:</strong></p>
-<ul class="simple">
-<li><p><strong>limit</strong>: Maximum number of battery packs to return.</p></li>
-<li><p><strong>offset</strong>: Number of battery packs to skip before starting to collect the result set.</p></li>
-<li><p><strong>search</strong>: General search term.</p></li>
-<li><p><strong>sort</strong>: Field to sort by.</p></li>
-<li><p><strong>order</strong>: Sort order, either <cite>asc</cite> or <cite>desc</cite>.</p></li>
-<li><p><strong>model_name</strong>: Filter by model name.</p></li>
-<li><p><strong>manufacturer_name</strong>: Filter by manufacturer name.</p></li>
-<li><p><strong>owner_name</strong>: Filter by owner name.</p></li>
-<li><p><strong>location</strong>: Filter by location.</p></li>
-<li><p><strong>status_label</strong>: Filter by status label.</p></li>
-</ul>
-<p><strong>Responses:</strong></p>
-<ul class="simple">
-<li><p><strong>200</strong>: Successfully retrieved battery packs.</p></li>
-</ul>
-<p><strong>Example Response (JSON):</strong></p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
-<span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRASUS01&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Warehouse&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Model X&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;manufacturer_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Delhi&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;warranty_months&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;battery_pack&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;battery_cell_chemistry&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Li-NMC&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;battery_pack_nominal_voltage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;48 V&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;battery_pack_nominal_charge_capacity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;48 Ah&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;bms_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Firmware&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;battery_cell_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cylindrical&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;battery_pack_casing&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Plastic&quot;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">]</span>
-</pre></div>
-</div>
-<p>—</p>
-</section>
-<section id="patch-battery-pack">
-<h2>PATCH <cite>/battery_pack</cite><a class="headerlink" href="#patch-battery-pack" title="Link to this heading"></a></h2>
-<p><strong>Summary:</strong> Update the properties of a group of battery packs.</p>
-<ul class="simple">
-<li><p><strong>Description:</strong> This endpoint allows the bulk update of battery pack details. The updates are provided via a CSV file or JSON input.</p></li>
-</ul>
-<p><strong>Request Body (CSV File):</strong></p>
-<ul class="simple">
-<li><p><strong>file</strong>: (binary) A CSV file containing the asset details to update.</p></li>
-</ul>
-<p><strong>Responses:</strong></p>
-<ul class="simple">
-<li><p><strong>200</strong>: Assets updated successfully.</p></li>
-<li><p><strong>400</strong>: Invalid request parameters.</p></li>
-<li><p><strong>401</strong>: Unauthorized access.</p></li>
-<li><p><strong>403</strong>: Access forbidden.</p></li>
-<li><p><strong>404</strong>: Resource not found.</p></li>
-<li><p><strong>500</strong>: Internal server error.</p></li>
-</ul>
-<p>—</p>
-</section>
-<section id="delete-battery-pack-i">
-<h2>DELETE <cite>/battery_pack/{i}</cite><a class="headerlink" href="#delete-battery-pack-i" title="Link to this heading"></a></h2>
-<p><strong>Summary:</strong> Delete an individual battery pack.</p>
-<ul class="simple">
-<li><p><strong>Description:</strong> This endpoint allows deletion of an individual battery pack.</p></li>
-</ul>
-<p><strong>Path Parameters:</strong></p>
-<ul class="simple">
-<li><p><strong>i</strong>: Identifier of the individual battery pack.</p></li>
-</ul>
-<p><strong>Responses:</strong></p>
-<ul class="simple">
-<li><p><strong>200</strong>: Asset deleted successfully.</p></li>
-</ul>
-<p><strong>Example Response (JSON):</strong></p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Asset deleted successfully&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;deletedAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-07-30T12:34:56Z&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRASUS01&quot;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>—</p>
-</section>
-<section id="get-battery-pack-i">
-<h2>GET <cite>/battery_pack/{i}</cite><a class="headerlink" href="#get-battery-pack-i" title="Link to this heading"></a></h2>
-<p><strong>Summary:</strong> Read the properties of an individual battery pack.</p>
-<ul class="simple">
-<li><p><strong>Description:</strong> Retrieve details of a specific battery pack.</p></li>
-</ul>
-<p><strong>Path Parameters:</strong></p>
-<ul class="simple">
-<li><p><strong>i</strong>: Identifier of the individual battery pack.</p></li>
-</ul>
-<p><strong>Responses:</strong></p>
-<ul class="simple">
-<li><p><strong>200</strong>: Battery pack details returned successfully.</p></li>
-</ul>
-<p><strong>Example Response (JSON):</strong></p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRASUS01&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Warehouse&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Model X&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;manufacturer_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Delhi&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;battery_pack&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;battery_cell_chemistry&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Li-NMC&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;battery_pack_nominal_voltage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;48 V&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;battery_pack_nominal_charge_capacity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;48 Ah&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;bms_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Firmware&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;battery_cell_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cylindrical&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;battery_pack_casing&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Plastic&quot;</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>—</p>
-</section>
-<section id="patch-battery-pack-i">
-<h2>PATCH <cite>/battery_pack/{i}</cite><a class="headerlink" href="#patch-battery-pack-i" title="Link to this heading"></a></h2>
-<p><strong>Summary:</strong> Update the properties of an individual battery pack.</p>
-<ul class="simple">
-<li><p><strong>Description:</strong> Modify the details of a specific battery pack.</p></li>
-</ul>
-<p><strong>Path Parameters:</strong></p>
-<ul class="simple">
-<li><p><strong>i</strong>: Identifier of the individual battery pack.</p></li>
-</ul>
-<p><strong>Request Body (JSON):</strong></p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRASUS01&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Warehouse&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Model X&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;manufacturer_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Delhi&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;battery_pack&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;battery_cell_chemistry&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Li-NMC&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;battery_pack_nominal_voltage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;48 V&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;battery_pack_nominal_charge_capacity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;48 Ah&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;bms_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Firmware&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;battery_cell_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cylindrical&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;battery_pack_casing&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Plastic&quot;</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p><strong>Responses:</strong></p>
-<ul class="simple">
-<li><p><strong>200</strong>: Asset updated successfully.</p></li>
-</ul>
-<p>—</p>
-</section>
-<section id="post-battery-pack-i-allocate">
-<h2>POST <cite>/battery_pack/{i}/allocate</cite><a class="headerlink" href="#post-battery-pack-i-allocate" title="Link to this heading"></a></h2>
-<p><strong>Summary:</strong> Allocate an individual battery pack to another asset, user, or location.</p>
-<ul class="simple">
-<li><p><strong>Description:</strong> Allocate a battery pack to a different entity such as a vehicle, location, or user.</p></li>
-</ul>
-<p><strong>Path Parameters:</strong></p>
-<ul class="simple">
-<li><p><strong>i</strong>: Identifier of the individual battery pack.</p></li>
-</ul>
-<p><strong>Request Body (JSON):</strong></p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;target_category&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Vehicle&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;target_individual&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRASUS01&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Vehicle&quot;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>—</p>
-</section>
-<section id="post-battery-pack-i-enable">
-<h2>POST <cite>/battery_pack/{i}/enable</cite><a class="headerlink" href="#post-battery-pack-i-enable" title="Link to this heading"></a></h2>
-<p><strong>Summary:</strong> Enable or disable an individual battery pack.</p>
-<ul class="simple">
-<li><p><strong>Description:</strong> Enable or disable the battery pack.</p></li>
-</ul>
-<p><strong>Path Parameters:</strong></p>
-<ul class="simple">
-<li><p><strong>i</strong>: Identifier of the individual battery pack.</p></li>
-</ul>
-<p><strong>Request Body (JSON):</strong></p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;operation_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;enable&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;operation_specifications&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;discharging&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Warehouse&quot;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p><strong>Responses:</strong></p>
-<ul class="simple">
-<li><p><strong>200</strong>: Asset enabled or disabled successfully.</p></li>
-</ul>
-<p><strong>Example Response (JSON):</strong></p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;issuedAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-09-04 00:00:00+05:30&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;enabledAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-09-04 00:00:00+05:30&quot;</span>
-<span class="p">}</span>
-</pre></div>
 </div>
 </section>
 </section>
@@ -420,7 +116,9 @@
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="assets_category.html" class="btn btn-neutral float-right" title="Assets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
