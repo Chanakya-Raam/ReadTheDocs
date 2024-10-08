@@ -11,3 +11,4 @@ This section contains all asset-related categories and their respective operatio
    position_tracker_basic_category
    position_tracker_advanced_category
    vehicle_control_unit_category
+   energy_meter_category
