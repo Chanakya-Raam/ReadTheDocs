@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Position Tracker (Basic) Endpoints &mdash; FastApi Documentation  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="SIM Card Endpoints" href="sim_card.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            FastApi Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Asset Categories:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="assets_category.html">Assets</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FastApi Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="assets_category.html">Assets</a></li>
+      <li class="breadcrumb-item active">Position Tracker (Basic) Endpoints</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/position_tracker_basic.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="position-tracker-basic-endpoints">
+<h1>Position Tracker (Basic) Endpoints<a class="headerlink" href="#position-tracker-basic-endpoints" title="Link to this heading"></a></h1>
+<p>This section covers all operations available for Position Trackers (Basic), including creating, reading, updating, deleting, and allocating individual or multiple position trackers.</p>
+<p><strong>Table of Operations</strong></p>
+<p>—</p>
+<section id="post-position-tracker-basic">
+<h2>POST /position_tracker_basic<a class="headerlink" href="#post-position-tracker-basic" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Create a new position tracker (basic).</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> This endpoint allows for the creation of a new position tracker (basic) or bulk creation via file upload.</p></li>
+<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
+</ul>
+<p><strong>Request Body (JSON Example):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TRACKER01&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Active&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Basic Tracker Model&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;manufacturer_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Delhi&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Responses:</strong></p>
+<ul class="simple">
+<li><p><strong>201</strong>: Position tracker created successfully.</p></li>
+<li><p><strong>400</strong>: Invalid request parameters.</p></li>
+<li><p><strong>401</strong>: Unauthorized access.</p></li>
+<li><p><strong>403</strong>: Access forbidden.</p></li>
+<li><p><strong>404</strong>: Resource not found.</p></li>
+<li><p><strong>409</strong>: Resource already exists.</p></li>
+<li><p><strong>500</strong>: Internal server error.</p></li>
+</ul>
+<p>—</p>
+</section>
+<section id="delete-position-tracker-basic">
+<h2>DELETE /position_tracker_basic<a class="headerlink" href="#delete-position-tracker-basic" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Delete a group of position trackers (basic).</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> This endpoint allows the deletion of a group of position trackers (basic). Requires JWT authorization.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul class="simple">
+<li><p><strong>200</strong>: Successfully deleted.</p></li>
+<li><p><strong>400</strong>: Invalid request parameters.</p></li>
+<li><p><strong>401</strong>: Unauthorized access.</p></li>
+<li><p><strong>403</strong>: Access forbidden.</p></li>
+<li><p><strong>404</strong>: Resource not found.</p></li>
+<li><p><strong>500</strong>: Internal server error.</p></li>
+</ul>
+<p>—</p>
+</section>
+<section id="get-position-tracker-basic">
+<h2>GET /position_tracker_basic<a class="headerlink" href="#get-position-tracker-basic" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Read the properties of a group of position trackers (basic).</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> Retrieve details of multiple position trackers (basic). Supports filtering, sorting, and pagination.</p></li>
+</ul>
+<p><strong>Query Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>limit</strong>: Maximum number of position trackers to return.</p></li>
+<li><p><strong>offset</strong>: Number of position trackers to skip before starting to collect the result set.</p></li>
+<li><p><strong>search</strong>: General search term.</p></li>
+<li><p><strong>sort</strong>: Field to sort by.</p></li>
+<li><p><strong>order</strong>: Sort order, either <cite>asc</cite> or <cite>desc</cite>.</p></li>
+<li><p><strong>model_name</strong>: Filter by model name.</p></li>
+<li><p><strong>manufacturer_name</strong>: Filter by manufacturer name.</p></li>
+<li><p><strong>owner_name</strong>: Filter by owner name.</p></li>
+<li><p><strong>location</strong>: Filter by location.</p></li>
+<li><p><strong>status_label</strong>: Filter by status label.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul class="simple">
+<li><p><strong>200</strong>: Successfully retrieved position trackers.</p></li>
+</ul>
+<p>—</p>
+</section>
+<section id="patch-position-tracker-basic">
+<h2>PATCH /position_tracker_basic<a class="headerlink" href="#patch-position-tracker-basic" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Update the properties of a group of position trackers (basic).</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> This endpoint allows the bulk update of position tracker (basic) details. The updates are provided via a CSV file or JSON input.</p></li>
+</ul>
+<p><strong>Request Body (CSV File):</strong></p>
+<ul class="simple">
+<li><p><strong>file</strong>: (binary) A CSV file containing the asset details to update.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul class="simple">
+<li><p><strong>200</strong>: Position trackers updated successfully.</p></li>
+<li><p><strong>400</strong>: Invalid request parameters.</p></li>
+<li><p><strong>401</strong>: Unauthorized access.</p></li>
+<li><p><strong>403</strong>: Access forbidden.</p></li>
+<li><p><strong>404</strong>: Resource not found.</p></li>
+<li><p><strong>500</strong>: Internal server error.</p></li>
+</ul>
+<p>—</p>
+</section>
+<section id="delete-position-tracker-basic-i">
+<h2>DELETE /position_tracker_basic/{i}<a class="headerlink" href="#delete-position-tracker-basic-i" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Delete an individual position tracker (basic).</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> This endpoint allows deletion of an individual position tracker (basic).</p></li>
+</ul>
+<p><strong>Path Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>i</strong>: Identifier of the individual position tracker.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul class="simple">
+<li><p><strong>200</strong>: Position tracker deleted successfully.</p></li>
+</ul>
+<p>—</p>
+</section>
+<section id="get-position-tracker-basic-i">
+<h2>GET /position_tracker_basic/{i}<a class="headerlink" href="#get-position-tracker-basic-i" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Read the properties of an individual position tracker (basic).</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> Retrieve details of a specific position tracker (basic).</p></li>
+</ul>
+<p><strong>Path Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>i</strong>: Identifier of the individual position tracker.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul class="simple">
+<li><p><strong>200</strong>: Position tracker details returned successfully.</p></li>
+</ul>
+<p>—</p>
+</section>
+<section id="patch-position-tracker-basic-i">
+<h2>PATCH /position_tracker_basic/{i}<a class="headerlink" href="#patch-position-tracker-basic-i" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Update the properties of an individual position tracker (basic).</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> Modify the details of a specific position tracker (basic).</p></li>
+</ul>
+<p><strong>Path Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>i</strong>: Identifier of the individual position tracker.</p></li>
+</ul>
+<p><strong>Request Body (JSON):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TRACKER01&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Active&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Basic Tracker Model&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;manufacturer_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Delhi&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Responses:</strong></p>
+<ul class="simple">
+<li><p><strong>200</strong>: Position tracker updated successfully.</p></li>
+</ul>
+<p>—</p>
+</section>
+<section id="post-position-tracker-basic-i-allocate">
+<h2>POST /position_tracker_basic/{i}/allocate<a class="headerlink" href="#post-position-tracker-basic-i-allocate" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Allocate an individual position tracker (basic) to another entity.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> Allocate a position tracker to a different entity such as a vehicle, user, or location.</p></li>
+</ul>
+<p><strong>Path Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>i</strong>: Identifier of the individual position tracker.</p></li>
+</ul>
+<p><strong>Request Body (JSON):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;target_category&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Vehicle&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;target_individual&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Vehicle001&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Use&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>—</p>
+</section>
+<section id="post-position-tracker-basic-i-enable">
+<h2>POST /position_tracker_basic/{i}/enable<a class="headerlink" href="#post-position-tracker-basic-i-enable" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Enable or disable a position tracker (basic).</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> Enable or disable the position tracker (basic).</p></li>
+</ul>
+<p><strong>Path Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>i</strong>: Identifier of the individual position tracker.</p></li>
+</ul>
+<p><strong>Request Body (JSON):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;operation_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;enable&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;operation_specifications&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tracking&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Active&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Responses:</strong></p>
+<ul class="simple">
+<li><p><strong>200</strong>: Position tracker enabled or disabled successfully.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sim_card.html" class="btn btn-neutral float-left" title="SIM Card Endpoints" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Chanakya Terala.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
