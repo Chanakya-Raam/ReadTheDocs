@@ -1,9 +1,10 @@
 Position Tracker (Basic) Endpoints
-===================================
+==================================
 
 This section covers all operations available for Position Trackers (Basic), including creating, reading, updating, deleting, and allocating individual or multiple position trackers.
 
-**Table of Operations**
+Table of Operations
+-------------------
 
 +-------------------+--------------------------------------------------+------------------------------------+
 | **Method**        | **Description**                                  | **Endpoint**                       |
