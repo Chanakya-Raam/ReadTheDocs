@@ -208,7 +208,7 @@ GET /reports/vehicle_speed
 
   .. code-block:: text
 
-     Content-Disposition: attachment; filename="vehicle_speed_report.csv"
+     Content-Disposition: attachment; filename="vehicle_speed_report.csv" (Downloadable)
 
 - **400**: Invalid request parameters.
 
