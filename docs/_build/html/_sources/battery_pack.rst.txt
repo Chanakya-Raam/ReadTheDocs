@@ -3,8 +3,7 @@ Battery Pack Endpoints
 
 This section covers all operations available for Battery Packs, including creating, reading, updating, deleting, and allocating individual or multiple battery packs.
 
-Table of Operations
-===================
+**Table of Operations**
 
 +-------------------+--------------------------------------------------+------------------------------------+
 | **Method**        | **Description**                                  | **Endpoint**                       |
