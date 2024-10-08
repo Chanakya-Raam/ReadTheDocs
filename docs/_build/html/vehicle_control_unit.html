@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vehicle Control Unit Endpoints &mdash; FastApi Documentation  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Vehicle Control Unit Category" href="vehicle_control_unit_category.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            FastApi Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Asset Categories:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="assets_category.html">Assets</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="battery_pack_category.html">Battery Pack Category</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sim_card_category.html">Sim Cards Category</a></li>
+<li class="toctree-l2"><a class="reference internal" href="position_tracker_basic_category.html">Position Tracker Basic Category</a></li>
+<li class="toctree-l2"><a class="reference internal" href="position_tracker_advanced_category.html">Position Tracker Advanced Category</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="vehicle_control_unit_category.html">Vehicle Control Unit Category</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Vehicle Control Unit Endpoints</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#post-vehicle-control-unit">POST /vehicle_control_unit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete-vehicle-control-unit">DELETE /vehicle_control_unit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-vehicle-control-unit">GET /vehicle_control_unit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#patch-vehicle-control-unit">PATCH /vehicle_control_unit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete-vehicle-control-unit-i">DELETE /vehicle_control_unit/{i}</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-vehicle-control-unit-i">GET /vehicle_control_unit/{i}</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#patch-vehicle-control-unit-i">PATCH /vehicle_control_unit/{i}</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#post-vehicle-control-unit-i-allocate">POST /vehicle_control_unit/{i}/allocate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#post-vehicle-control-unit-i-enable">POST /vehicle_control_unit/{i}/enable</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FastApi Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="assets_category.html">Assets</a></li>
+          <li class="breadcrumb-item"><a href="vehicle_control_unit_category.html">Vehicle Control Unit Category</a></li>
+      <li class="breadcrumb-item active">Vehicle Control Unit Endpoints</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/vehicle_control_unit.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="vehicle-control-unit-endpoints">
+<h1>Vehicle Control Unit Endpoints<a class="headerlink" href="#vehicle-control-unit-endpoints" title="Link to this heading"></a></h1>
+<p>This section covers all operations available for Vehicle Control Units, including creating, reading, updating, deleting, and allocating individual or multiple vehicle control units.</p>
+<p><strong>Table of Operations</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Method</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+<th class="head"><p><strong>Endpoint</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>POST</p></td>
+<td><p>Create a new vehicle control unit or bulk upload</p></td>
+<td><p>/vehicle_control_unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>DELETE</p></td>
+<td><p>Delete a group of vehicle control units</p></td>
+<td><p>/vehicle_control_unit</p></td>
+</tr>
+<tr class="row-even"><td><p>GET</p></td>
+<td><p>Read the properties of a group of vehicle control units</p></td>
+<td><p>/vehicle_control_unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>PATCH</p></td>
+<td><p>Update the properties of a group of vehicle control units</p></td>
+<td><p>/vehicle_control_unit</p></td>
+</tr>
+<tr class="row-even"><td><p>DELETE</p></td>
+<td><p>Delete an individual vehicle control unit</p></td>
+<td><p>/vehicle_control_unit/{i}</p></td>
+</tr>
+<tr class="row-odd"><td><p>GET</p></td>
+<td><p>Read the properties of an individual vehicle control unit</p></td>
+<td><p>/vehicle_control_unit/{i}</p></td>
+</tr>
+<tr class="row-even"><td><p>PATCH</p></td>
+<td><p>Update the properties of an individual vehicle control unit</p></td>
+<td><p>/vehicle_control_unit/{i}</p></td>
+</tr>
+<tr class="row-odd"><td><p>POST</p></td>
+<td><p>Allocate a vehicle control unit to an entity</p></td>
+<td><p>/vehicle_control_unit/{i}/allocate</p></td>
+</tr>
+<tr class="row-even"><td><p>POST</p></td>
+<td><p>Enable or disable a vehicle control unit</p></td>
+<td><p>/vehicle_control_unit/{i}/enable</p></td>
+</tr>
+</tbody>
+</table>
+<p>—</p>
+<section id="post-vehicle-control-unit">
+<h2>POST /vehicle_control_unit<a class="headerlink" href="#post-vehicle-control-unit" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Create a new vehicle control unit.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> This endpoint allows for the creation of a new vehicle control unit or bulk creation via file upload.</p></li>
+<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
+</ul>
+<p><strong>Request Body (JSON Example):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRASUS01&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Warehouse&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Model X&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;manufacturer_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Delhi&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;warranty_months&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;vehicle_control_unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Responses:</strong></p>
+<ul>
+<li><p><strong>201</strong>: Vehicle control unit created successfully.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;createdAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-09-04 00:00:00+05:30&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>400</strong>: Invalid request parameters.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invalid request parameters&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>401</strong>: Unauthorized access.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Unauthorized access&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>403</strong>: Access forbidden.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Access forbidden&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>404</strong>: Resource not found.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Resource not found&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>409</strong>: Conflict - Resource already exists.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Resource already exists&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>500</strong>: Internal server error.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Internal server error&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>—</p>
+</section>
+<section id="delete-vehicle-control-unit">
+<h2>DELETE /vehicle_control_unit<a class="headerlink" href="#delete-vehicle-control-unit" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Delete a group of vehicle control units.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> This endpoint allows the deletion of a group of vehicle control units. Requires JWT authentication.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul>
+<li><p><strong>200</strong>: Successfully deleted.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Assets deleted successfully&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;deletedAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-07-30T12:34:56Z&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>400</strong>: Invalid request parameters.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invalid request parameters&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>401</strong>: Unauthorized access.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Unauthorized access&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>500</strong>: Internal server error.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Internal server error&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>—</p>
+</section>
+<section id="get-vehicle-control-unit">
+<h2>GET /vehicle_control_unit<a class="headerlink" href="#get-vehicle-control-unit" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Read the properties of a group of vehicle control units.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> Retrieve details of multiple vehicle control units. Supports filtering, sorting, and pagination.</p></li>
+</ul>
+<p><strong>Query Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>limit</strong>: Maximum number of vehicle control units to return.</p></li>
+<li><p><strong>offset</strong>: Number of vehicle control units to skip before starting to collect the result set.</p></li>
+<li><p><strong>search</strong>: General search term.</p></li>
+<li><p><strong>sort</strong>: Field to sort by.</p></li>
+<li><p><strong>order</strong>: Sort order, either <cite>asc</cite> or <cite>desc</cite>.</p></li>
+<li><p><strong>model_name</strong>: Filter by model name.</p></li>
+<li><p><strong>manufacturer_name</strong>: Filter by manufacturer name.</p></li>
+<li><p><strong>owner_name</strong>: Filter by owner name.</p></li>
+<li><p><strong>location</strong>: Filter by location.</p></li>
+<li><p><strong>status_label</strong>: Filter by status label (e.g., Ready to Deploy, In Factory, In Warehouse, For Rework, In Vehicle).</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul>
+<li><p><strong>200</strong>: Successfully retrieved vehicle control units.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRASUS01&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Warehouse&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Model X&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;manufacturer_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Delhi&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;warranty_months&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;vehicle_control_unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>—</p>
+</section>
+<section id="patch-vehicle-control-unit">
+<h2>PATCH /vehicle_control_unit<a class="headerlink" href="#patch-vehicle-control-unit" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Update the properties of a group of vehicle control units.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> This endpoint allows the bulk update of vehicle control unit details.</p></li>
+<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul>
+<li><p><strong>200</strong>: Assets updated successfully.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Assets updated successfully&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>400</strong>: Invalid request parameters.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invalid request parameters&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>401</strong>: Unauthorized access.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Unauthorized access&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>—</p>
+</section>
+<section id="delete-vehicle-control-unit-i">
+<h2>DELETE /vehicle_control_unit/{i}<a class="headerlink" href="#delete-vehicle-control-unit-i" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Delete an individual vehicle control unit.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> This endpoint allows deletion of an individual vehicle control unit.</p></li>
+</ul>
+<p><strong>Path Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>i</strong>: Identifier of the individual vehicle control unit.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul>
+<li><p><strong>200</strong>: Asset deleted successfully.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Asset deleted successfully&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;deletedAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-07-30T12:34:56Z&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRASUS01&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>—</p>
+</section>
+<section id="get-vehicle-control-unit-i">
+<h2>GET /vehicle_control_unit/{i}<a class="headerlink" href="#get-vehicle-control-unit-i" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Read the properties of an individual vehicle control unit.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> Retrieve details of a specific vehicle control unit.</p></li>
+</ul>
+<p><strong>Path Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>i</strong>: Identifier of the individual vehicle control unit.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul>
+<li><p><strong>200</strong>: Vehicle control unit details returned successfully.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRASUS01&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Warehouse&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Model X&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;manufacturer_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Delhi&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>—</p>
+</section>
+<section id="patch-vehicle-control-unit-i">
+<h2>PATCH /vehicle_control_unit/{i}<a class="headerlink" href="#patch-vehicle-control-unit-i" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Update the properties of an individual vehicle control unit.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> Modify the details of a specific vehicle control unit.</p></li>
+</ul>
+<p><strong>Path Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>i</strong>: Identifier of the individual vehicle control unit.</p></li>
+</ul>
+<p><strong>Request Body (JSON Example):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRASUS01&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Warehouse&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Model X&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;manufacturer_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Delhi&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;warranty_months&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;vehicle_control_unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>—</p>
+</section>
+<section id="post-vehicle-control-unit-i-allocate">
+<h2>POST /vehicle_control_unit/{i}/allocate<a class="headerlink" href="#post-vehicle-control-unit-i-allocate" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Allocate a vehicle control unit to another entity.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> Allocate a vehicle control unit to a different entity such as a vehicle, user, or location.</p></li>
+</ul>
+<p><strong>Path Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>i</strong>: Identifier of the individual vehicle control unit.</p></li>
+</ul>
+<p><strong>Request Body (JSON Example):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;target_category&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Vehicle&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;target_individual&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRASUS01&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Use&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>—</p>
+</section>
+<section id="post-vehicle-control-unit-i-enable">
+<h2>POST /vehicle_control_unit/{i}/enable<a class="headerlink" href="#post-vehicle-control-unit-i-enable" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Enable or disable the vehicle control unit.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> Enable or disable the vehicle control unit.</p></li>
+</ul>
+<p><strong>Path Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>i</strong>: Identifier of the individual vehicle control unit.</p></li>
+</ul>
+<p><strong>Request Body (JSON Example):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;operation_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;enable&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;operation_specifications&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;active&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Use&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Responses:</strong></p>
+<ul>
+<li><p><strong>200</strong>: Asset enabled or disabled successfully.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;issuedAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-09-04 00:00:00+05:30&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;enabledAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-09-04 00:00:00+05:30&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>—</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="vehicle_control_unit_category.html" class="btn btn-neutral float-left" title="Vehicle Control Unit Category" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Chanakya Terala.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

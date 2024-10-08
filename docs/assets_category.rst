@@ -10,3 +10,4 @@ This section contains all asset-related categories and their respective operatio
    sim_card_category
    position_tracker_basic_category
    position_tracker_advanced_category
+   vehicle_control_unit_category
