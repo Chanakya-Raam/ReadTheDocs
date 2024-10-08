@@ -1,7 +1,7 @@
-Welcome to the Irasus REST API Documentation
-============================================
+Irasus API Documentation
+=========================
 
-This document outlines all available categories of operations in the Irasus Battery Management System, allowing users to manage assets like Battery Packs, Vehicles, SIM Cards, and more. The API is designed to offer a unified solution for monitoring, controlling, and managing these assets from anywhere in the world.
+Welcome to the **Irasus REST API Documentation**. This document outlines all available categories of operations in the **Irasus Battery Management System**, allowing users to manage assets like Battery Packs, Vehicles, SIM Cards, and more. The API is designed to offer a unified solution for monitoring, controlling, and managing these assets from anywhere in the world.
 
 Overview
 --------
@@ -24,7 +24,6 @@ API Usage Guidelines
 
 - **Rate Limiting**: The Irasus API may enforce rate limits to prevent misuse. Handle rate limit responses (HTTP 429) in your application.
 - **Error Handling**: Make sure to handle common error statuses like `400 Bad Request`, `401 Unauthorized`, `403 Forbidden`, `404 Not Found`, and `500 Internal Server Error`.
-- **Testing**: Test all endpoints in a staging environment before going live.
 
 Getting Started
 ---------------
