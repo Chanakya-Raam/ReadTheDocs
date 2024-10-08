@@ -5,27 +5,28 @@ This section covers all operations available for Position Trackers (Basic), incl
 
 **Table of Operations**
 
-+-------------------+----------------------------------------------------+------------------------------------+
-| **Method**        | **Description**                                    | **Endpoint**                       |
-+===================+====================================================+====================================+
-| POST              | Create a new position tracker (basic) or bulk upload| /position_tracker_basic            |
-+-------------------+----------------------------------------------------+------------------------------------+
-| DELETE            | Delete a group of position trackers (basic)         | /position_tracker_basic            |
-+-------------------+----------------------------------------------------+------------------------------------+
-| GET               | Read a group of position trackers (basic)           | /position_tracker_basic            |
-+-------------------+----------------------------------------------------+------------------------------------+
-| PATCH             | Update a group of position trackers (basic)         | /position_tracker_basic            |
-+-------------------+----------------------------------------------------+------------------------------------+
-| DELETE            | Delete an individual position tracker (basic)       | /position_tracker_basic/{i}        |
-+-------------------+----------------------------------------------------+------------------------------------+
-| GET               | Read an individual position tracker (basic)         | /position_tracker_basic/{i}        |
-+-------------------+----------------------------------------------------+------------------------------------+
-| PATCH             | Update an individual position tracker (basic)       | /position_tracker_basic/{i}        |
-+-------------------+----------------------------------------------------+------------------------------------+
-| POST              | Allocate a position tracker (basic) to an entity    | /position_tracker_basic/{i}/allocate|
-+-------------------+----------------------------------------------------+------------------------------------+
-| POST              | Enable or disable a position tracker (basic)        | /position_tracker_basic/{i}/enable |
-+-------------------+----------------------------------------------------+------------------------------------+
++--------------------+---------------------------------------------------+------------------------------------+
+| **Method**         | **Description**                                   | **Endpoint**                       |
++====================+===================================================+====================================+
+| POST               | Create a new position tracker (basic) or bulk     | /position_tracker_basic            |
+|                    | upload                                            |                                    |
++--------------------+---------------------------------------------------+------------------------------------+
+| DELETE             | Delete a group of position trackers (basic)       | /position_tracker_basic            |
++--------------------+---------------------------------------------------+------------------------------------+
+| GET                | Read the properties of a group of trackers (basic)| /position_tracker_basic            |
++--------------------+---------------------------------------------------+------------------------------------+
+| PATCH              | Update a group of trackers (basic)                | /position_tracker_basic            |
++--------------------+---------------------------------------------------+------------------------------------+
+| DELETE             | Delete an individual tracker (basic)              | /position_tracker_basic/{i}        |
++--------------------+---------------------------------------------------+------------------------------------+
+| GET                | Read an individual tracker (basic)                | /position_tracker_basic/{i}        |
++--------------------+---------------------------------------------------+------------------------------------+
+| PATCH              | Update an individual tracker (basic)              | /position_tracker_basic/{i}        |
++--------------------+---------------------------------------------------+------------------------------------+
+| POST               | Allocate a tracker (basic) to an entity           | /position_tracker_basic/{i}/allocate|
++--------------------+---------------------------------------------------+------------------------------------+
+| POST               | Enable or disable a tracker (basic)               | /position_tracker_basic/{i}/enable |
++--------------------+---------------------------------------------------+------------------------------------+
 
 ---
 
