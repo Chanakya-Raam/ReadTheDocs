@@ -7,5 +7,4 @@ This section contains all asset-related categories and their respective operatio
    :maxdepth: 2
 
    battery_pack_category
-   sim_card
-   vehicle
+   sim_card_category
