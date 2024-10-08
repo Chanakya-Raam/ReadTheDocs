@@ -16,3 +16,8 @@ This section contains all asset-related categories and their respective operatio
    swapping_station_category
    charger_advanced_category
    charger_basic_category
+
+Non-Assets
+===========
+
+This section contains all non-asset-related categories and their respective operations.
