@@ -76,10 +76,8 @@
   <section id="position-tracker-basic-endpoints">
 <h1>Position Tracker (Basic) Endpoints<a class="headerlink" href="#position-tracker-basic-endpoints" title="Link to this heading"></a></h1>
 <p>This section covers all operations available for Position Trackers (Basic), including creating, reading, updating, deleting, and allocating individual or multiple position trackers.</p>
-<section id="table-of-operations">
-<h2>Table of Operations<a class="headerlink" href="#table-of-operations" title="Link to this heading"></a></h2>
+<p><strong>Table of Operations</strong></p>
 <p>—</p>
-</section>
 <section id="post-position-tracker-basic">
 <h2>POST /position_tracker_basic<a class="headerlink" href="#post-position-tracker-basic" title="Link to this heading"></a></h2>
 <p><strong>Summary:</strong> Create a new position tracker (basic).</p>
@@ -142,7 +140,7 @@
 <li><p><strong>500</strong>: Internal server error.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Request timed out&quot;</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Internal server error&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -154,12 +152,11 @@
 <h2>DELETE /position_tracker_basic<a class="headerlink" href="#delete-position-tracker-basic" title="Link to this heading"></a></h2>
 <p><strong>Summary:</strong> Delete a group of position trackers (basic).</p>
 <ul class="simple">
-<li><p><strong>Description:</strong> This endpoint allows for the deletion of a group of position trackers (basic).</p></li>
-<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
+<li><p><strong>Description:</strong> This endpoint allows the deletion of a group of position trackers (basic). Requires JWT authorization.</p></li>
 </ul>
 <p><strong>Responses:</strong></p>
 <ul>
-<li><p><strong>200</strong>: Assets deleted successfully.</p>
+<li><p><strong>200</strong>: Successfully deleted.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Assets deleted successfully&quot;</span><span class="p">,</span>
@@ -187,7 +184,7 @@
 <li><p><strong>500</strong>: Internal server error.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Request timed out&quot;</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Internal server error&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -273,7 +270,6 @@
 <p><strong>Summary:</strong> Delete an individual position tracker (basic).</p>
 <ul class="simple">
 <li><p><strong>Description:</strong> This endpoint allows deletion of an individual position tracker (basic).</p></li>
-<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
 </ul>
 <p><strong>Path Parameters:</strong></p>
 <ul class="simple">
@@ -299,7 +295,6 @@
 <p><strong>Summary:</strong> Read the properties of an individual position tracker (basic).</p>
 <ul class="simple">
 <li><p><strong>Description:</strong> Retrieve details of a specific position tracker (basic).</p></li>
-<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
 </ul>
 <p><strong>Path Parameters:</strong></p>
 <ul class="simple">
@@ -326,8 +321,7 @@
 <h2>POST /position_tracker_basic/{i}/allocate<a class="headerlink" href="#post-position-tracker-basic-i-allocate" title="Link to this heading"></a></h2>
 <p><strong>Summary:</strong> Allocate a position tracker (basic) to another entity.</p>
 <ul class="simple">
-<li><p><strong>Description:</strong> Allocate a position tracker (basic) to a different entity, such as a vehicle, user, or location.</p></li>
-<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
+<li><p><strong>Description:</strong> Allocate a position tracker (basic) to a different entity such as a vehicle, user, or location.</p></li>
 </ul>
 <p><strong>Path Parameters:</strong></p>
 <ul class="simple">
@@ -345,10 +339,9 @@
 </section>
 <section id="post-position-tracker-basic-i-enable">
 <h2>POST /position_tracker_basic/{i}/enable<a class="headerlink" href="#post-position-tracker-basic-i-enable" title="Link to this heading"></a></h2>
-<p><strong>Summary:</strong> Enable or disable a position tracker (basic).</p>
+<p><strong>Summary:</strong> Enable or disable the position tracker (basic).</p>
 <ul class="simple">
-<li><p><strong>Description:</strong> Enable or disable a position tracker (basic).</p></li>
-<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
+<li><p><strong>Description:</strong> Enable or disable the position tracker (basic).</p></li>
 </ul>
 <p><strong>Path Parameters:</strong></p>
 <ul class="simple">

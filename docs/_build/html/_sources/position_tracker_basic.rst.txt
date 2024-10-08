@@ -3,14 +3,13 @@ Position Tracker (Basic) Endpoints
 
 This section covers all operations available for Position Trackers (Basic), including creating, reading, updating, deleting, and allocating individual or multiple position trackers.
 
-Table of Operations
--------------------
+**Table of Operations**
 
 +-------------------+--------------------------------------------------+------------------------------------+
 | **Method**        | **Description**                                  | **Endpoint**                       |
 +===================+==================================================+====================================+
-| POST              | Create a new position tracker (basic) or upload  | /position_tracker_basic            |
-|                   | in bulk                                          |                                    |
+| POST              | Create a new position tracker (basic) or bulk    | /position_tracker_basic            |
+|                   | upload                                           |                                    |
 +-------------------+--------------------------------------------------+------------------------------------+
 | DELETE            | Delete a group of position trackers (basic)      | /position_tracker_basic            |
 +-------------------+--------------------------------------------------+------------------------------------+
@@ -109,7 +108,7 @@ POST /position_tracker_basic
 
      {
        "status": "error",
-       "message": "Request timed out"
+       "message": "Internal server error"
      }
 
 ---
@@ -119,12 +118,11 @@ DELETE /position_tracker_basic
 
 **Summary:** Delete a group of position trackers (basic).
 
-- **Description:** This endpoint allows for the deletion of a group of position trackers (basic).
-- **Security:** Requires JWT authentication.
+- **Description:** This endpoint allows the deletion of a group of position trackers (basic). Requires JWT authorization.
 
 **Responses:**
 
-- **200**: Assets deleted successfully.
+- **200**: Successfully deleted.
 
   .. code-block:: json
 
@@ -158,7 +156,7 @@ DELETE /position_tracker_basic
 
      {
        "status": "error",
-       "message": "Request timed out"
+       "message": "Internal server error"
      }
 
 ---
@@ -246,7 +244,6 @@ DELETE /position_tracker_basic/{i}
 **Summary:** Delete an individual position tracker (basic).
 
 - **Description:** This endpoint allows deletion of an individual position tracker (basic).
-- **Security:** Requires JWT authentication.
 
 **Path Parameters:**
 
@@ -273,7 +270,6 @@ GET /position_tracker_basic/{i}
 **Summary:** Read the properties of an individual position tracker (basic).
 
 - **Description:** Retrieve details of a specific position tracker (basic).
-- **Security:** Requires JWT authentication.
 
 **Path Parameters:**
 
@@ -301,8 +297,7 @@ POST /position_tracker_basic/{i}/allocate
 
 **Summary:** Allocate a position tracker (basic) to another entity.
 
-- **Description:** Allocate a position tracker (basic) to a different entity, such as a vehicle, user, or location.
-- **Security:** Requires JWT authentication.
+- **Description:** Allocate a position tracker (basic) to a different entity such as a vehicle, user, or location.
 
 **Path Parameters:**
 
@@ -323,10 +318,9 @@ POST /position_tracker_basic/{i}/allocate
 POST /position_tracker_basic/{i}/enable
 ---------------------------------------
 
-**Summary:** Enable or disable a position tracker (basic).
+**Summary:** Enable or disable the position tracker (basic).
 
-- **Description:** Enable or disable a position tracker (basic).
-- **Security:** Requires JWT authentication.
+- **Description:** Enable or disable the position tracker (basic).
 
 **Path Parameters:**
 
@@ -354,4 +348,3 @@ POST /position_tracker_basic/{i}/enable
      }
 
 ---
-
