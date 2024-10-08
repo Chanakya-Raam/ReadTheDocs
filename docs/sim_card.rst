@@ -3,8 +3,7 @@ SIM Card Endpoints
 
 This section covers all operations available for SIM Cards, including creating, reading, updating, deleting, and allocating individual or multiple SIM cards.
 
-Table of Operations
-===================
+**Table of Operations**
 
 +-------------------+--------------------------------------------------+----------------------------------+
 | **Method**        | **Description**                                  | **Endpoint**                     |
