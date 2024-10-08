@@ -43,7 +43,7 @@ GET /reports/energy
 
   .. code-block:: text
 
-     Content-Disposition: attachment; filename="energy_report.csv"
+     Content-Disposition: attachment; filename="energy_report.csv"(Downloadable)
 
 - **400**: Invalid request parameters.
 
@@ -76,7 +76,7 @@ GET /reports/swap_station_logs
 
   .. code-block:: text
 
-     Content-Disposition: attachment; filename="swap_station_logs.csv"
+     Content-Disposition: attachment; filename="swap_station_logs.csv"(Downloadable)
 
 - **400**: Invalid request parameters.
 
@@ -109,7 +109,7 @@ GET /reports/cycles
 
   .. code-block:: text
 
-     Content-Disposition: attachment; filename="cycles_report.csv"
+     Content-Disposition: attachment; filename="cycles_report.csv"(Downloadable)
 
 - **400**: Invalid request parameters.
 
@@ -142,7 +142,7 @@ GET /reports/capacity_retention
 
   .. code-block:: text
 
-     Content-Disposition: attachment; filename="capacity_retention_report.csv"
+     Content-Disposition: attachment; filename="capacity_retention_report.csv"(Downloadable)
 
 - **400**: Invalid request parameters.
 
@@ -175,7 +175,7 @@ GET /reports/soh
 
   .. code-block:: text
 
-     Content-Disposition: attachment; filename="soh_report.csv"
+     Content-Disposition: attachment; filename="soh_report.csv"(Downloadable)
 
 - **400**: Invalid request parameters.
 
