@@ -59,12 +59,57 @@ POST /position_tracker_basic
 **Responses:**
 
 - **201**: Position tracker created successfully.
+
+  .. code-block:: json
+
+     {
+       "createdAt": "2024-09-04 00:00:00+05:30"
+     }
+
 - **400**: Invalid request parameters.
+
+  .. code-block:: json
+
+     {
+       "status": "error",
+       "message": "Invalid request parameters"
+     }
+
 - **401**: Unauthorized access.
+
+  .. code-block:: json
+
+     {
+       "status": "error",
+       "message": "Unauthorized access"
+     }
+
 - **403**: Access forbidden.
+
+  .. code-block:: json
+
+     {
+       "status": "error",
+       "message": "Access forbidden"
+     }
+
 - **404**: Resource not found.
-- **409**: Resource already exists.
+
+  .. code-block:: json
+
+     {
+       "status": "error",
+       "message": "Resource not found"
+     }
+
 - **500**: Internal server error.
+
+  .. code-block:: json
+
+     {
+       "status": "error",
+       "message": "Request timed out"
+     }
 
 ---
 
@@ -73,16 +118,47 @@ DELETE /position_tracker_basic
 
 **Summary:** Delete a group of position trackers (basic).
 
-- **Description:** This endpoint allows the deletion of a group of position trackers (basic). Requires JWT authorization.
+- **Description:** This endpoint allows for the deletion of a group of position trackers (basic).
+- **Security:** Requires JWT authentication.
 
 **Responses:**
 
-- **200**: Successfully deleted.
+- **200**: Assets deleted successfully.
+
+  .. code-block:: json
+
+     {
+       "status": "success",
+       "message": "Assets deleted successfully",
+       "deletedAt": "2024-07-30T12:34:56Z"
+     }
+
 - **400**: Invalid request parameters.
+
+  .. code-block:: json
+
+     {
+       "status": "error",
+       "message": "Invalid request parameters"
+     }
+
 - **401**: Unauthorized access.
-- **403**: Access forbidden.
-- **404**: Resource not found.
+
+  .. code-block:: json
+
+     {
+       "status": "error",
+       "message": "Unauthorized access"
+     }
+
 - **500**: Internal server error.
+
+  .. code-block:: json
+
+     {
+       "status": "error",
+       "message": "Request timed out"
+     }
 
 ---
 
@@ -102,13 +178,25 @@ GET /position_tracker_basic
 - **order**: Sort order, either `asc` or `desc`.
 - **model_name**: Filter by model name.
 - **manufacturer_name**: Filter by manufacturer name.
-- **owner_name**: Filter by owner name.
 - **location**: Filter by location.
 - **status_label**: Filter by status label.
 
 **Responses:**
 
 - **200**: Successfully retrieved position trackers.
+
+  .. code-block:: json
+
+     [
+       {
+         "asset_tag": "TRACKER01",
+         "company": "Irasus Technologies Private Limited",
+         "status_label": "Active",
+         "model": "Basic Tracker Model",
+         "manufacturer_name": "Irasus Technologies Private Limited",
+         "location": "Delhi"
+       }
+     ]
 
 ---
 
@@ -117,29 +205,47 @@ PATCH /position_tracker_basic
 
 **Summary:** Update the properties of a group of position trackers (basic).
 
-- **Description:** This endpoint allows the bulk update of position tracker (basic) details. The updates are provided via a CSV file or JSON input.
-
-**Request Body (CSV File):**
-
-- **file**: (binary) A CSV file containing the asset details to update.
+- **Description:** This endpoint allows the bulk update of position tracker (basic) details.
+- **Security:** Requires JWT authentication.
 
 **Responses:**
 
-- **200**: Position trackers updated successfully.
+- **200**: Assets updated successfully.
+
+  .. code-block:: json
+
+     {
+       "status": "success",
+       "message": "Assets updated successfully"
+     }
+
 - **400**: Invalid request parameters.
+
+  .. code-block:: json
+
+     {
+       "status": "error",
+       "message": "Invalid request parameters"
+     }
+
 - **401**: Unauthorized access.
-- **403**: Access forbidden.
-- **404**: Resource not found.
-- **500**: Internal server error.
+
+  .. code-block:: json
+
+     {
+       "status": "error",
+       "message": "Unauthorized access"
+     }
 
 ---
 
 DELETE /position_tracker_basic/{i}
------------------------------------
+----------------------------------
 
 **Summary:** Delete an individual position tracker (basic).
 
 - **Description:** This endpoint allows deletion of an individual position tracker (basic).
+- **Security:** Requires JWT authentication.
 
 **Path Parameters:**
 
@@ -147,7 +253,16 @@ DELETE /position_tracker_basic/{i}
 
 **Responses:**
 
-- **200**: Position tracker deleted successfully.
+- **200**: Asset deleted successfully.
+
+  .. code-block:: json
+
+     {
+       "status": "success",
+       "message": "Asset deleted successfully",
+       "deletedAt": "2024-07-30T12:34:56Z",
+       "asset_tag": "TRACKER01"
+     }
 
 ---
 
@@ -157,6 +272,7 @@ GET /position_tracker_basic/{i}
 **Summary:** Read the properties of an individual position tracker (basic).
 
 - **Description:** Retrieve details of a specific position tracker (basic).
+- **Security:** Requires JWT authentication.
 
 **Path Parameters:**
 
@@ -166,50 +282,32 @@ GET /position_tracker_basic/{i}
 
 - **200**: Position tracker details returned successfully.
 
----
+  .. code-block:: json
 
-PATCH /position_tracker_basic/{i}
----------------------------------
-
-**Summary:** Update the properties of an individual position tracker (basic).
-
-- **Description:** Modify the details of a specific position tracker (basic).
-
-**Path Parameters:**
-
-- **i**: Identifier of the individual position tracker.
-
-**Request Body (JSON):**
-
-.. code-block:: json
-
-   {
-     "asset_tag": "TRACKER01",
-     "company": "Irasus Technologies Private Limited",
-     "status_label": "Active",
-     "model": "Basic Tracker Model",
-     "manufacturer_name": "Irasus Technologies Private Limited",
-     "location": "Delhi"
-   }
-
-**Responses:**
-
-- **200**: Position tracker updated successfully.
+     {
+       "asset_tag": "TRACKER01",
+       "company": "Irasus Technologies Private Limited",
+       "status_label": "Active",
+       "model": "Basic Tracker Model",
+       "manufacturer_name": "Irasus Technologies Private Limited",
+       "location": "Delhi"
+     }
 
 ---
 
 POST /position_tracker_basic/{i}/allocate
 -----------------------------------------
 
-**Summary:** Allocate an individual position tracker (basic) to another entity.
+**Summary:** Allocate a position tracker (basic) to another entity.
 
-- **Description:** Allocate a position tracker to a different entity such as a vehicle, user, or location.
+- **Description:** Allocate a position tracker (basic) to a different entity, such as a vehicle, user, or location.
+- **Security:** Requires JWT authentication.
 
 **Path Parameters:**
 
 - **i**: Identifier of the individual position tracker.
 
-**Request Body (JSON):**
+**Request Body (JSON Example):**
 
 .. code-block:: json
 
@@ -226,22 +324,33 @@ POST /position_tracker_basic/{i}/enable
 
 **Summary:** Enable or disable a position tracker (basic).
 
-- **Description:** Enable or disable the position tracker (basic).
+- **Description:** Enable or disable a position tracker (basic).
+- **Security:** Requires JWT authentication.
 
 **Path Parameters:**
 
 - **i**: Identifier of the individual position tracker.
 
-**Request Body (JSON):**
+**Request Body (JSON Example):**
 
 .. code-block:: json
 
    {
      "operation_type": "enable",
-     "operation_specifications": "tracking",
-     "status_label": "Active"
+     "operation_specifications": "active",
+     "status_label": "In Use"
    }
 
 **Responses:**
 
-- **200**: Position tracker enabled or disabled successfully.
+- **200**: Asset enabled or disabled successfully.
+
+  .. code-block:: json
+
+     {
+       "issuedAt": "2024-09-04 00:00:00+05:30",
+       "enabledAt": "2024-09-04 00:00:00+05:30"
+     }
+
+---
+

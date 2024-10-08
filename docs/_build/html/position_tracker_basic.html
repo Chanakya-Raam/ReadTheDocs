@@ -97,14 +97,54 @@
 </pre></div>
 </div>
 <p><strong>Responses:</strong></p>
-<ul class="simple">
-<li><p><strong>201</strong>: Position tracker created successfully.</p></li>
-<li><p><strong>400</strong>: Invalid request parameters.</p></li>
-<li><p><strong>401</strong>: Unauthorized access.</p></li>
-<li><p><strong>403</strong>: Access forbidden.</p></li>
-<li><p><strong>404</strong>: Resource not found.</p></li>
-<li><p><strong>409</strong>: Resource already exists.</p></li>
-<li><p><strong>500</strong>: Internal server error.</p></li>
+<ul>
+<li><p><strong>201</strong>: Position tracker created successfully.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;createdAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-09-04 00:00:00+05:30&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>400</strong>: Invalid request parameters.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invalid request parameters&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>401</strong>: Unauthorized access.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Unauthorized access&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>403</strong>: Access forbidden.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Access forbidden&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>404</strong>: Resource not found.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Resource not found&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>500</strong>: Internal server error.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Request timed out&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
 </ul>
 <p>—</p>
 </section>
@@ -112,16 +152,44 @@
 <h2>DELETE /position_tracker_basic<a class="headerlink" href="#delete-position-tracker-basic" title="Link to this heading"></a></h2>
 <p><strong>Summary:</strong> Delete a group of position trackers (basic).</p>
 <ul class="simple">
-<li><p><strong>Description:</strong> This endpoint allows the deletion of a group of position trackers (basic). Requires JWT authorization.</p></li>
+<li><p><strong>Description:</strong> This endpoint allows for the deletion of a group of position trackers (basic).</p></li>
+<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
 </ul>
 <p><strong>Responses:</strong></p>
-<ul class="simple">
-<li><p><strong>200</strong>: Successfully deleted.</p></li>
-<li><p><strong>400</strong>: Invalid request parameters.</p></li>
-<li><p><strong>401</strong>: Unauthorized access.</p></li>
-<li><p><strong>403</strong>: Access forbidden.</p></li>
-<li><p><strong>404</strong>: Resource not found.</p></li>
-<li><p><strong>500</strong>: Internal server error.</p></li>
+<ul>
+<li><p><strong>200</strong>: Assets deleted successfully.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Assets deleted successfully&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;deletedAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-07-30T12:34:56Z&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>400</strong>: Invalid request parameters.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invalid request parameters&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>401</strong>: Unauthorized access.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Unauthorized access&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>500</strong>: Internal server error.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Request timed out&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
 </ul>
 <p>—</p>
 </section>
@@ -140,13 +208,25 @@
 <li><p><strong>order</strong>: Sort order, either <cite>asc</cite> or <cite>desc</cite>.</p></li>
 <li><p><strong>model_name</strong>: Filter by model name.</p></li>
 <li><p><strong>manufacturer_name</strong>: Filter by manufacturer name.</p></li>
-<li><p><strong>owner_name</strong>: Filter by owner name.</p></li>
 <li><p><strong>location</strong>: Filter by location.</p></li>
 <li><p><strong>status_label</strong>: Filter by status label.</p></li>
 </ul>
 <p><strong>Responses:</strong></p>
-<ul class="simple">
-<li><p><strong>200</strong>: Successfully retrieved position trackers.</p></li>
+<ul>
+<li><p><strong>200</strong>: Successfully retrieved position trackers.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TRACKER01&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Active&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Basic Tracker Model&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;manufacturer_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Delhi&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</li>
 </ul>
 <p>—</p>
 </section>
@@ -154,20 +234,35 @@
 <h2>PATCH /position_tracker_basic<a class="headerlink" href="#patch-position-tracker-basic" title="Link to this heading"></a></h2>
 <p><strong>Summary:</strong> Update the properties of a group of position trackers (basic).</p>
 <ul class="simple">
-<li><p><strong>Description:</strong> This endpoint allows the bulk update of position tracker (basic) details. The updates are provided via a CSV file or JSON input.</p></li>
-</ul>
-<p><strong>Request Body (CSV File):</strong></p>
-<ul class="simple">
-<li><p><strong>file</strong>: (binary) A CSV file containing the asset details to update.</p></li>
+<li><p><strong>Description:</strong> This endpoint allows the bulk update of position tracker (basic) details.</p></li>
+<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
 </ul>
 <p><strong>Responses:</strong></p>
-<ul class="simple">
-<li><p><strong>200</strong>: Position trackers updated successfully.</p></li>
-<li><p><strong>400</strong>: Invalid request parameters.</p></li>
-<li><p><strong>401</strong>: Unauthorized access.</p></li>
-<li><p><strong>403</strong>: Access forbidden.</p></li>
-<li><p><strong>404</strong>: Resource not found.</p></li>
-<li><p><strong>500</strong>: Internal server error.</p></li>
+<ul>
+<li><p><strong>200</strong>: Assets updated successfully.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Assets updated successfully&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>400</strong>: Invalid request parameters.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invalid request parameters&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>401</strong>: Unauthorized access.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Unauthorized access&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
 </ul>
 <p>—</p>
 </section>
@@ -176,14 +271,24 @@
 <p><strong>Summary:</strong> Delete an individual position tracker (basic).</p>
 <ul class="simple">
 <li><p><strong>Description:</strong> This endpoint allows deletion of an individual position tracker (basic).</p></li>
+<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
 </ul>
 <p><strong>Path Parameters:</strong></p>
 <ul class="simple">
 <li><p><strong>i</strong>: Identifier of the individual position tracker.</p></li>
 </ul>
 <p><strong>Responses:</strong></p>
-<ul class="simple">
-<li><p><strong>200</strong>: Position tracker deleted successfully.</p></li>
+<ul>
+<li><p><strong>200</strong>: Asset deleted successfully.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Asset deleted successfully&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;deletedAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-07-30T12:34:56Z&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TRACKER01&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
 </ul>
 <p>—</p>
 </section>
@@ -192,28 +297,15 @@
 <p><strong>Summary:</strong> Read the properties of an individual position tracker (basic).</p>
 <ul class="simple">
 <li><p><strong>Description:</strong> Retrieve details of a specific position tracker (basic).</p></li>
+<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
 </ul>
 <p><strong>Path Parameters:</strong></p>
 <ul class="simple">
 <li><p><strong>i</strong>: Identifier of the individual position tracker.</p></li>
 </ul>
 <p><strong>Responses:</strong></p>
-<ul class="simple">
-<li><p><strong>200</strong>: Position tracker details returned successfully.</p></li>
-</ul>
-<p>—</p>
-</section>
-<section id="patch-position-tracker-basic-i">
-<h2>PATCH /position_tracker_basic/{i}<a class="headerlink" href="#patch-position-tracker-basic-i" title="Link to this heading"></a></h2>
-<p><strong>Summary:</strong> Update the properties of an individual position tracker (basic).</p>
-<ul class="simple">
-<li><p><strong>Description:</strong> Modify the details of a specific position tracker (basic).</p></li>
-</ul>
-<p><strong>Path Parameters:</strong></p>
-<ul class="simple">
-<li><p><strong>i</strong>: Identifier of the individual position tracker.</p></li>
-</ul>
-<p><strong>Request Body (JSON):</strong></p>
+<ul>
+<li><p><strong>200</strong>: Position tracker details returned successfully.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;asset_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TRACKER01&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irasus Technologies Private Limited&quot;</span><span class="p">,</span>
@@ -224,23 +316,22 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p><strong>Responses:</strong></p>
-<ul class="simple">
-<li><p><strong>200</strong>: Position tracker updated successfully.</p></li>
+</li>
 </ul>
 <p>—</p>
 </section>
 <section id="post-position-tracker-basic-i-allocate">
 <h2>POST /position_tracker_basic/{i}/allocate<a class="headerlink" href="#post-position-tracker-basic-i-allocate" title="Link to this heading"></a></h2>
-<p><strong>Summary:</strong> Allocate an individual position tracker (basic) to another entity.</p>
+<p><strong>Summary:</strong> Allocate a position tracker (basic) to another entity.</p>
 <ul class="simple">
-<li><p><strong>Description:</strong> Allocate a position tracker to a different entity such as a vehicle, user, or location.</p></li>
+<li><p><strong>Description:</strong> Allocate a position tracker (basic) to a different entity, such as a vehicle, user, or location.</p></li>
+<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
 </ul>
 <p><strong>Path Parameters:</strong></p>
 <ul class="simple">
 <li><p><strong>i</strong>: Identifier of the individual position tracker.</p></li>
 </ul>
-<p><strong>Request Body (JSON):</strong></p>
+<p><strong>Request Body (JSON Example):</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;target_category&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Vehicle&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;target_individual&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Vehicle001&quot;</span><span class="p">,</span>
@@ -254,24 +345,33 @@
 <h2>POST /position_tracker_basic/{i}/enable<a class="headerlink" href="#post-position-tracker-basic-i-enable" title="Link to this heading"></a></h2>
 <p><strong>Summary:</strong> Enable or disable a position tracker (basic).</p>
 <ul class="simple">
-<li><p><strong>Description:</strong> Enable or disable the position tracker (basic).</p></li>
+<li><p><strong>Description:</strong> Enable or disable a position tracker (basic).</p></li>
+<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
 </ul>
 <p><strong>Path Parameters:</strong></p>
 <ul class="simple">
 <li><p><strong>i</strong>: Identifier of the individual position tracker.</p></li>
 </ul>
-<p><strong>Request Body (JSON):</strong></p>
+<p><strong>Request Body (JSON Example):</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;operation_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;enable&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;operation_specifications&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tracking&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Active&quot;</span>
+<span class="w">  </span><span class="nt">&quot;operation_specifications&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;active&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Use&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p><strong>Responses:</strong></p>
-<ul class="simple">
-<li><p><strong>200</strong>: Position tracker enabled or disabled successfully.</p></li>
+<ul>
+<li><p><strong>200</strong>: Asset enabled or disabled successfully.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;issuedAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-09-04 00:00:00+05:30&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;enabledAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-09-04 00:00:00+05:30&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
 </ul>
+<p>—</p>
 </section>
 </section>
 
