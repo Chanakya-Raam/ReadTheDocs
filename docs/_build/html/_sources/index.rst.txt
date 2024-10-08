@@ -1,9 +1,33 @@
-API Documentation
-==================
+Irasus API Documentation
+=========================
 
-Welcome to the API documentation. This document outlines all available categories of operations in the FastAPI project, focusing on assets like Battery Packs, Vehicles, SIM Cards, and more.
+Welcome to the **Irasus REST API Documentation**. This document outlines all available categories of operations in the **Irasus Battery Management System**, allowing users to manage assets like Battery Packs, Vehicles, SIM Cards, and more. The API is designed to offer a unified solution for monitoring, controlling, and managing these assets from anywhere in the world.
 
-Contents
+## Overview
+The Irasus API provides endpoints that help manage battery packs and other related assets efficiently. Whether you're building applications for electric vehicle fleet management, battery health monitoring, or location tracking, this API enables seamless integration with your systems.
+
+## Key Features
+
+- **Battery Pack Management**: Create, read, update, delete, allocate, and enable/disable battery packs.
+- **Vehicle Control**: Manage vehicle assets linked to battery packs.
+- **SIM Card Operations**: Manage SIM cards used in battery tracking and communication.
+- **Swapping Stations**: Manage battery pack swapping stations, including operations and status checks.
+- **Charger Operations**: Monitor and manage charger assets (both advanced and basic models).
+- **Geofencing & Location**: Track and update location-based data, including geofences.
+- **User Management**: Assign assets to users and manage user-specific operations.
+
+## API Usage Guidelines
+
+- **Rate Limiting**: The Irasus API may enforce rate limits to prevent misuse. Handle rate limit responses (HTTP 429) in your application.
+- **Error Handling**: Make sure to handle common error statuses like `400 Bad Request`, `401 Unauthorized`, `403 Forbidden`, `404 Not Found`, and `500 Internal Server Error`.
+- **Testing**: Test all endpoints in a staging environment before going live.
+
+## Getting Started
+
+All API operations require authentication via JSON Web Tokens (JWT). Ensure that the token is passed in the `Authorization` header in the following format:
+
+
+## Contents
 ========
 
 .. toctree::
@@ -11,10 +35,3 @@ Contents
    :caption: Asset Categories:
 
    assets_category
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

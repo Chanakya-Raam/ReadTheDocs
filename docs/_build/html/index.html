@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>API Documentation &mdash; FastApi Documentation  documentation</title>
+  <title>Irasus API Documentation &mdash; FastApi Documentation  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -62,7 +62,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">API Documentation</li>
+      <li class="breadcrumb-item active">Irasus API Documentation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -72,12 +72,32 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="api-documentation">
-<h1>API Documentation<a class="headerlink" href="#api-documentation" title="Link to this heading"></a></h1>
-<p>Welcome to the API documentation. This document outlines all available categories of operations in the FastAPI project, focusing on assets like Battery Packs, Vehicles, SIM Cards, and more.</p>
+  <section id="irasus-api-documentation">
+<h1>Irasus API Documentation<a class="headerlink" href="#irasus-api-documentation" title="Link to this heading"></a></h1>
+<p>Welcome to the <strong>Irasus REST API Documentation</strong>. This document outlines all available categories of operations in the <strong>Irasus Battery Management System</strong>, allowing users to manage assets like Battery Packs, Vehicles, SIM Cards, and more. The API is designed to offer a unified solution for monitoring, controlling, and managing these assets from anywhere in the world.</p>
+<p>## Overview
+The Irasus API provides endpoints that help manage battery packs and other related assets efficiently. Whether you’re building applications for electric vehicle fleet management, battery health monitoring, or location tracking, this API enables seamless integration with your systems.</p>
+<p>## Key Features</p>
+<ul class="simple">
+<li><p><strong>Battery Pack Management</strong>: Create, read, update, delete, allocate, and enable/disable battery packs.</p></li>
+<li><p><strong>Vehicle Control</strong>: Manage vehicle assets linked to battery packs.</p></li>
+<li><p><strong>SIM Card Operations</strong>: Manage SIM cards used in battery tracking and communication.</p></li>
+<li><p><strong>Swapping Stations</strong>: Manage battery pack swapping stations, including operations and status checks.</p></li>
+<li><p><strong>Charger Operations</strong>: Monitor and manage charger assets (both advanced and basic models).</p></li>
+<li><p><strong>Geofencing &amp; Location</strong>: Track and update location-based data, including geofences.</p></li>
+<li><p><strong>User Management</strong>: Assign assets to users and manage user-specific operations.</p></li>
+</ul>
+<p>## API Usage Guidelines</p>
+<ul class="simple">
+<li><p><strong>Rate Limiting</strong>: The Irasus API may enforce rate limits to prevent misuse. Handle rate limit responses (HTTP 429) in your application.</p></li>
+<li><p><strong>Error Handling</strong>: Make sure to handle common error statuses like <cite>400 Bad Request</cite>, <cite>401 Unauthorized</cite>, <cite>403 Forbidden</cite>, <cite>404 Not Found</cite>, and <cite>500 Internal Server Error</cite>.</p></li>
+<li><p><strong>Testing</strong>: Test all endpoints in a staging environment before going live.</p></li>
+</ul>
+<p>## Getting Started</p>
+<p>All API operations require authentication via JSON Web Tokens (JWT). Ensure that the token is passed in the <cite>Authorization</cite> header in the following format:</p>
 </section>
 <section id="contents">
-<h1>Contents<a class="headerlink" href="#contents" title="Link to this heading"></a></h1>
+<h1>## Contents<a class="headerlink" href="#contents" title="Link to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Asset Categories:</span></p>
 <ul>
@@ -87,14 +107,6 @@
 </li>
 </ul>
 </div>
-</section>
-<section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading"></a></h1>
-<ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
-<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
-</ul>
 </section>
 
 

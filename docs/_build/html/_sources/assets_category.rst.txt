@@ -1,7 +1,7 @@
 Assets
 ======
 
-This section contains all asset-related categories and their respective operations.
+This section contains all asset-related categories and their respective operations. Select any category to view its available endpoints and details.
 
 .. toctree::
    :maxdepth: 2
