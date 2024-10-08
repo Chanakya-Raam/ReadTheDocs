@@ -21,3 +21,8 @@ Non-Assets
 ===========
 
 This section contains all non-asset-related categories and their respective operations.
+
+.. toctree::
+   :maxdepth: 1
+
+   driver_category
