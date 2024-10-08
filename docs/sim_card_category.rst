@@ -1,4 +1,4 @@
-Battery Pack Category
+Sim Cards Category
 =====================
 
 This section contains all endpoints related to the management of Battery Packs.
