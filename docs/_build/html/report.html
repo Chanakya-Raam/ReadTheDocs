@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Report Endpoints &mdash; FastApi Documentation  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Report Category" href="report_category.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            FastApi Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Asset Categories:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="assets_category.html">Assets</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="assets_category.html#non-assets">Non-Assets</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="driver_category.html">Driver Category</a></li>
+<li class="toctree-l2"><a class="reference internal" href="location_category.html">Location Category</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_category.html">User Category</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="report_category.html">Report Category</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Report Endpoints</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#get-reports-energy">GET /reports/energy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-reports-swap-station-logs">GET /reports/swap_station_logs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-reports-cycles">GET /reports/cycles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-reports-capacity-retention">GET /reports/capacity_retention</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-reports-soh">GET /reports/soh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-reports-vehicle-speed">GET /reports/vehicle_speed</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FastApi Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="assets_category.html">Assets</a></li>
+          <li class="breadcrumb-item"><a href="report_category.html">Report Category</a></li>
+      <li class="breadcrumb-item active">Report Endpoints</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/report.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="report-endpoints">
+<h1>Report Endpoints<a class="headerlink" href="#report-endpoints" title="Link to this heading"></a></h1>
+<p>This section covers all report-related operations, including generating various types of reports such as energy reports, swap station logs, cycles reports, capacity retention reports, SoH reports, and vehicle speed reports.</p>
+<p><strong>Table of Operations</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Method</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+<th class="head"><p><strong>Endpoint</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>GET</p></td>
+<td><p>Retrieve energy reports</p></td>
+<td><p>/reports/energy</p></td>
+</tr>
+<tr class="row-odd"><td><p>GET</p></td>
+<td><p>Retrieve swap station logs</p></td>
+<td><p>/reports/swap_station_logs</p></td>
+</tr>
+<tr class="row-even"><td><p>GET</p></td>
+<td><p>Retrieve cycles reports</p></td>
+<td><p>/reports/cycles</p></td>
+</tr>
+<tr class="row-odd"><td><p>GET</p></td>
+<td><p>Retrieve capacity retention reports</p></td>
+<td><p>/reports/capacity_retention</p></td>
+</tr>
+<tr class="row-even"><td><p>GET</p></td>
+<td><p>Retrieve SoH reports</p></td>
+<td><p>/reports/soh</p></td>
+</tr>
+<tr class="row-odd"><td><p>GET</p></td>
+<td><p>Retrieve vehicle speed reports</p></td>
+<td><p>/reports/vehicle_speed</p></td>
+</tr>
+</tbody>
+</table>
+<p>—</p>
+<section id="get-reports-energy">
+<h2>GET /reports/energy<a class="headerlink" href="#get-reports-energy" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Retrieve energy reports for a given date range.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> This endpoint generates a report based on energy consumption data.</p></li>
+<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
+</ul>
+<p><strong>Query Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>from</strong>: Start timestamp for the report.</p></li>
+<li><p><strong>to</strong>: End timestamp for the report.</p></li>
+<li><p><strong>pack_number</strong>: Battery Pack Number.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul>
+<li><p><strong>200</strong>: Report retrieved successfully.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Content-Disposition: attachment; filename=&quot;energy_report.csv&quot;
+</pre></div>
+</div>
+</li>
+<li><p><strong>400</strong>: Invalid request parameters.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invalid request parameters&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>—</p>
+</section>
+<section id="get-reports-swap-station-logs">
+<h2>GET /reports/swap_station_logs<a class="headerlink" href="#get-reports-swap-station-logs" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Retrieve swap station logs for a given date range.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> This endpoint generates swap station log reports within a specified date range.</p></li>
+<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
+</ul>
+<p><strong>Query Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>from</strong>: Start timestamp for the report.</p></li>
+<li><p><strong>to</strong>: End timestamp for the report.</p></li>
+<li><p><strong>i</strong>: Unique identifier of swap station.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul>
+<li><p><strong>200</strong>: Report retrieved successfully.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Content-Disposition: attachment; filename=&quot;swap_station_logs.csv&quot;
+</pre></div>
+</div>
+</li>
+<li><p><strong>400</strong>: Invalid request parameters.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invalid request parameters&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>—</p>
+</section>
+<section id="get-reports-cycles">
+<h2>GET /reports/cycles<a class="headerlink" href="#get-reports-cycles" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Retrieve cycles reports for a given date range.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> This endpoint generates cycles reports based on the usage of battery packs.</p></li>
+<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
+</ul>
+<p><strong>Query Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>from</strong>: Start timestamp for the report.</p></li>
+<li><p><strong>to</strong>: End timestamp for the report.</p></li>
+<li><p><strong>pack_number</strong>: Battery Pack Number.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul>
+<li><p><strong>200</strong>: Report retrieved successfully.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Content-Disposition: attachment; filename=&quot;cycles_report.csv&quot;
+</pre></div>
+</div>
+</li>
+<li><p><strong>400</strong>: Invalid request parameters.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invalid request parameters&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>—</p>
+</section>
+<section id="get-reports-capacity-retention">
+<h2>GET /reports/capacity_retention<a class="headerlink" href="#get-reports-capacity-retention" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Retrieve capacity retention reports for a given date range.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> This endpoint generates reports on battery capacity retention over time.</p></li>
+<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
+</ul>
+<p><strong>Query Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>from</strong>: Start timestamp for the report.</p></li>
+<li><p><strong>to</strong>: End timestamp for the report.</p></li>
+<li><p><strong>pack_number</strong>: Battery Pack Number.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul>
+<li><p><strong>200</strong>: Report retrieved successfully.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Content-Disposition: attachment; filename=&quot;capacity_retention_report.csv&quot;
+</pre></div>
+</div>
+</li>
+<li><p><strong>400</strong>: Invalid request parameters.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invalid request parameters&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>—</p>
+</section>
+<section id="get-reports-soh">
+<h2>GET /reports/soh<a class="headerlink" href="#get-reports-soh" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Retrieve SoH (State of Health) reports for a given date range.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> This endpoint generates reports on the state of health of battery packs.</p></li>
+<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
+</ul>
+<p><strong>Query Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>from</strong>: Start timestamp for the report.</p></li>
+<li><p><strong>to</strong>: End timestamp for the report.</p></li>
+<li><p><strong>pack_number</strong>: Battery Pack Number.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul>
+<li><p><strong>200</strong>: Report retrieved successfully.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Content-Disposition: attachment; filename=&quot;soh_report.csv&quot;
+</pre></div>
+</div>
+</li>
+<li><p><strong>400</strong>: Invalid request parameters.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invalid request parameters&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>—</p>
+</section>
+<section id="get-reports-vehicle-speed">
+<h2>GET /reports/vehicle_speed<a class="headerlink" href="#get-reports-vehicle-speed" title="Link to this heading"></a></h2>
+<p><strong>Summary:</strong> Retrieve vehicle speed reports for a given date range.</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> This endpoint generates reports on vehicle speed data.</p></li>
+<li><p><strong>Security:</strong> Requires JWT authentication.</p></li>
+</ul>
+<p><strong>Query Parameters:</strong></p>
+<ul class="simple">
+<li><p><strong>from</strong>: Start timestamp for the report.</p></li>
+<li><p><strong>to</strong>: End timestamp for the report.</p></li>
+<li><p><strong>i</strong>: Unique identifier of a vehicle.</p></li>
+</ul>
+<p><strong>Responses:</strong></p>
+<ul>
+<li><p><strong>200</strong>: Report retrieved successfully.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Content-Disposition: attachment; filename=&quot;vehicle_speed_report.csv&quot;
+</pre></div>
+</div>
+</li>
+<li><p><strong>400</strong>: Invalid request parameters.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invalid request parameters&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>—</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="report_category.html" class="btn btn-neutral float-left" title="Report Category" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Chanakya Terala.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

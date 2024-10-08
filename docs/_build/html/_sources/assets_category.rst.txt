@@ -26,3 +26,6 @@ This section contains all non-asset-related categories and their respective oper
    :maxdepth: 1
 
    driver_category
+   location_category
+   user_category
+   report_category
