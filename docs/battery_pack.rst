@@ -6,35 +6,33 @@ This section covers all operations available for Battery Packs, including creati
 Table of Operations
 ===================
 
-+-------------------+-------------------------------------------------+----------------------------+
-| **Method**        | **Description**                                 | **Endpoint**                |
-+===================+=================================================+============================+
-| POST              | Create a new battery pack or upload in bulk     | /battery_pack               |
-+-------------------+-------------------------------------------------+----------------------------+
-| DELETE            | Delete a group of battery packs                 | /battery_pack               |
-+-------------------+-------------------------------------------------+----------------------------+
-| GET               | Read the properties of a group of battery packs | /battery_pack               |
-+-------------------+-------------------------------------------------+----------------------------+
-| PATCH             | Update the properties of a group of battery     | /battery_pack               |
-|                   | packs                                           |                            |
-+-------------------+-------------------------------------------------+----------------------------+
-| DELETE            | Delete an individual battery pack               | /battery_pack/{i}           |
-+-------------------+-------------------------------------------------+----------------------------+
-| GET               | Read the properties of an individual battery    | /battery_pack/{i}           |
-|                   | pack                                            |                            |
-+-------------------+-------------------------------------------------+----------------------------+
-| PATCH             | Update the properties of an individual battery  | /battery_pack/{i}           |
-|                   | pack                                            |                            |
-+-------------------+-------------------------------------------------+----------------------------+
-| POST              | Allocate a battery pack to another entity       | /battery_pack/{i}/allocate  |
-+-------------------+-------------------------------------------------+----------------------------+
-| POST              | Enable or disable a battery pack                | /battery_pack/{i}/enable    |
-+-------------------+-------------------------------------------------+----------------------------+
++-------------------+--------------------------------------------------+------------------------------------+
+| **Method**        | **Description**                                  | **Endpoint**                       |
++===================+==================================================+====================================+
+| POST              | Create a new battery pack or upload in bulk      | /battery_pack                      |
++-------------------+--------------------------------------------------+------------------------------------+
+| DELETE            | Delete a group of battery packs                  | /battery_pack                      |
++-------------------+--------------------------------------------------+------------------------------------+
+| GET               | Read the properties of a group of battery packs  | /battery_pack                      |
++-------------------+--------------------------------------------------+------------------------------------+
+| PATCH             | Update the properties of a group of battery packs| /battery_pack                      |
++-------------------+--------------------------------------------------+------------------------------------+
+| DELETE            | Delete an individual battery pack                | /battery_pack/{i}                  |
++-------------------+--------------------------------------------------+------------------------------------+
+| GET               | Read the properties of an individual battery pack| /battery_pack/{i}                  |
++-------------------+--------------------------------------------------+------------------------------------+
+| PATCH             | Update the properties of an individual battery   | /battery_pack/{i}                  |
+|                   | pack                                             |                                    |
++-------------------+--------------------------------------------------+------------------------------------+
+| POST              | Allocate a battery pack to another entity        | /battery_pack/{i}/allocate         |
++-------------------+--------------------------------------------------+------------------------------------+
+| POST              | Enable or disable a battery pack                 | /battery_pack/{i}/enable           |
++-------------------+--------------------------------------------------+------------------------------------+
 
 ---
 
-POST `/battery_pack`
---------------------
+POST /battery_pack
+------------------
 
 **Summary:** Create a new battery pack.
 
@@ -75,8 +73,8 @@ POST `/battery_pack`
 
 ---
 
-DELETE `/battery_pack`
-----------------------
+DELETE /battery_pack
+--------------------
 
 **Summary:** Delete a group of battery packs.
 
@@ -100,8 +98,8 @@ DELETE `/battery_pack`
 
 ---
 
-GET `/battery_pack`
--------------------
+GET /battery_pack
+-----------------
 
 **Summary:** Read the properties of a group of battery packs.
 
@@ -150,8 +148,8 @@ GET `/battery_pack`
 
 ---
 
-PATCH `/battery_pack`
----------------------
+PATCH /battery_pack
+-------------------
 
 **Summary:** Update the properties of a group of battery packs.
 
@@ -172,8 +170,8 @@ PATCH `/battery_pack`
 
 ---
 
-DELETE `/battery_pack/{i}`
---------------------------
+DELETE /battery_pack/{i}
+------------------------
 
 **Summary:** Delete an individual battery pack.
 
@@ -200,8 +198,8 @@ DELETE `/battery_pack/{i}`
 
 ---
 
-GET `/battery_pack/{i}`
------------------------
+GET /battery_pack/{i}
+---------------------
 
 **Summary:** Read the properties of an individual battery pack.
 
@@ -238,8 +236,8 @@ GET `/battery_pack/{i}`
 
 ---
 
-PATCH `/battery_pack/{i}`
--------------------------
+PATCH /battery_pack/{i}
+-----------------------
 
 **Summary:** Update the properties of an individual battery pack.
 
@@ -276,8 +274,8 @@ PATCH `/battery_pack/{i}`
 
 ---
 
-POST `/battery_pack/{i}/allocate`
----------------------------------
+POST /battery_pack/{i}/allocate
+-------------------------------
 
 **Summary:** Allocate an individual battery pack to another asset, user, or location.
 
@@ -299,8 +297,8 @@ POST `/battery_pack/{i}/allocate`
 
 ---
 
-POST `/battery_pack/{i}/enable`
--------------------------------
+POST /battery_pack/{i}/enable
+-----------------------------
 
 **Summary:** Enable or disable an individual battery pack.
 
