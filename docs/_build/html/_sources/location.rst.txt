@@ -28,7 +28,7 @@ This section covers all operations available for locations, including creating, 
 POST /location
 --------------
 
-**Summary:** Create a new location.
+**Summary:** Create a new location .
 
 - **Description:** This endpoint allows the creation of a new location.
 - **Security:** Requires JWT authentication.
