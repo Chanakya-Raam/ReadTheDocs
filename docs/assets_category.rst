@@ -14,7 +14,6 @@ This section contains all asset-related categories and their respective operatio
    position_tracker_advanced_category
    vehicle_control_unit_category
    energy_meter_category
-   geofence_category
    swapping_station_category
    charger_advanced_category
    charger_basic_category
@@ -33,3 +32,4 @@ This section contains all non-asset-related categories and their respective oper
    location_category
    user_category
    report_category
+   geofence_category
