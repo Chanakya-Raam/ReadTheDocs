@@ -34,6 +34,6 @@ Contents
 
 .. toctree::
    :maxdepth: 2
-   :caption: Asset Categories:
+   :caption: API v1:
 
    assets_category
