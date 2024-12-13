@@ -34,6 +34,6 @@ Contents
 
 .. toctree::
    :maxdepth: 2
-   :caption: API v1:
+   :caption: FastApi (API v1):
 
    assets_category
