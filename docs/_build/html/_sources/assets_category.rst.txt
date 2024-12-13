@@ -4,7 +4,9 @@ Assets
 This section contains all asset-related categories and their respective operations.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
+   :caption: Asset Categories:
+
 
    battery_pack_category
    sim_card_category
@@ -23,7 +25,9 @@ Non-Assets
 This section contains all non-asset-related categories and their respective operations.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
+   :caption: Non-Assets Categories:
+
 
    driver_category
    location_category
